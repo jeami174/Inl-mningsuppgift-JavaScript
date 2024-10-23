@@ -1,0 +1,17 @@
+
+.btn-cirkel {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-white-to-gray);
+    color: var(--color-navigation);
+    cursor: pointer;
+}
+
+.btn-cirkel:hover,
+.btn-cirkel:focus-visible {
+    background-color: hsl(from var(--color-white-to-gray) h s calc(1-10));
+}
