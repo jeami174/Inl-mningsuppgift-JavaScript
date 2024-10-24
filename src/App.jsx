@@ -1,11 +1,15 @@
+import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/HeroSection";
 
 const App = () => {
     return (
         <>
-        <HeroSection />
+            <Navbar />
+            <main>
+                <HeroSection />
+            </main>
         </>
-    )
+    );
 };
 
 export default App;
