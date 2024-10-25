@@ -1,0 +1,81 @@
+/* SECTION-APPFEATURES START */
+
+.section-appfeatures {
+    padding-block: 2rem;
+    background-color: var(--color-bg);
+}
+
+.section-appfeatures .h2 {
+    text-align: center;
+}
+
+.section-appfeatures .h2 h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-text-heading);
+}
+
+.section-appfeatures .content {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.section-appfeatures .content p {
+    font-size: 18px;
+    color: var(--color-text-body);
+}
+
+.section-appfeatures .container-info {
+    padding-bottom: 1rem;
+}
+
+.section-appfeatures .info-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.75rem;
+    column-gap: 1.5rem;
+    align-items: start;
+}
+
+.section-appfeatures .info-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    background-color: var(--color-icon-bg);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.section-appfeatures .info-box h3 {
+    grid-column: 2;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin: 0;
+}
+
+.section-appfeatures .info-box p {
+    grid-column: 2;
+    font-size: 16px;
+    color: var(--color-text-body);
+    line-height: 1.6;
+}
+
+.section-appfeatures .images {
+    display: none;
+    position: relative;
+}
+
+.section-appfeatures .img-phone {
+    width: auto;
+    height: auto;
+}
+
+.section-appfeatures .card {
+    position: absolute;
+    left: 20px;
+    top: 90px;
+    width: auto;
+    height: auto;
+}
+
+/* SECTION-APPFEATURES END */

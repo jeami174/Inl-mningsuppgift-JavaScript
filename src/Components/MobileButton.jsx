@@ -1,6 +1,7 @@
 // MobileButton.jsx
 import React from 'react';
 import './MobileButton.css';
+import Hamburger from '../Images/Button - Toggle navigation.svg';
 
 const MobileButton = ({ onClick, className = '' }) => {
     return (
@@ -8,7 +9,7 @@ const MobileButton = ({ onClick, className = '' }) => {
             className={`btn-mobile ${className}`}
             onClick={onClick}
         >
-            {/* Lägg till eventuellt ikon eller innehåll här */}
+            <img src={Hamburger} alt="Menu button" />
         </button>
     );
 };

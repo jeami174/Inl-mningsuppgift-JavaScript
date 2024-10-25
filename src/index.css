@@ -87,11 +87,6 @@ body {
     background-color: var(--color-bg);
 }
 
-img {
-    display: block;
-    width: 100%;
-}
-
 input, button, textarea, select {
     font: inherit;
 }
@@ -125,6 +120,8 @@ ol, ul {
     list-style: none;
 }
 
+/* UTILITY CLASSES */
+
 .wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -137,6 +134,8 @@ ol, ul {
     padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 a {

@@ -1,4 +1,4 @@
-
+// ToggleButton.jsx
 import React from 'react';
 import './ToggleButton.css';
 
@@ -12,3 +12,4 @@ const ToggleButton = ({ checked, onChange, className = '' }) => {
 };
 
 export default ToggleButton;
+

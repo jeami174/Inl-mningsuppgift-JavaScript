@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import MobileButton from './MobileButton'; // Importera din MobileButton-komponent
-import ToggleButton from './ToggleButton'; // Importera din ToggleButton-komponent
+import MobileButton from './MobileButton';
+import ToggleButton from './ToggleButton';
+import Button from './Button'; // Importera din Button-komponent
 import Logotype from '../Images/logos/Logotype.svg';
 import Logotypedark from '../Images/logos/Logotypedark.svg';
-import MenuButton from '../Images/Button - Toggle navigation.svg';
 import UserIcon from '../Images/icons/User.svg';
-import './Navbar.css'; // Använd en separat CSS-fil för att hålla din styling
+import './Navbar.css';
 
 const Navbar = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        // Kontrollera om dark mode är inställt i localStorage
         const hasSetDarkMode = localStorage.getItem('darkmode');
         if (hasSetDarkMode === null) {
-            // Använd systeminställningar om det inte är satt
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 enableDarkMode();
             } else {
@@ -75,18 +73,21 @@ const Navbar = () => {
                     aria-controls="main-menu"
                     aria-expanded={isMenuOpen}
                     aria-label="toggle navigation"
-                >
-                    <img src={MenuButton} alt="Menu button" />
-                </MobileButton>
+                />
                 <ul id="main-menu" className={`main-menu ${isMenuOpen ? '' : 'hide'}`}>
                     <li>
                         <a className="nav-link" href="#">Features</a>
                     </li>
                     <li>
-                        <a className="btn-primary" href="#" aria-label="Sign in or up">
-                            <img src={UserIcon} alt="User Icon" />
-                            <span>Sign in / up</span>
-                        </a>
+                        <Button 
+                            variant="primary"
+                            className="btn-primary"
+                            aria-label="Sign in or up"
+                            icon={UserIcon}
+                            href="#"
+                        >
+                            Sign in / up
+                        </Button>
                     </li>
                 </ul>
             </div>
