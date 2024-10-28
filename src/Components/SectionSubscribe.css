@@ -1,0 +1,59 @@
+#section-subscribe .card {
+    background-color: var(--color-bg-gray);
+    width: 100%;
+    border-radius: 0.5rem;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+}
+
+#section-subscribe .subscribe {
+    display: flex;
+    column-gap: 1rem;
+}
+
+#section-subscribe .subscribe .headline-desktop {
+    display: none;
+}
+
+#section-subscribe .subscribe img {
+    width: 78px;
+}
+
+#section-subscribe .email {
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+}
+
+#section-subscribe .email .btn-primary {
+    border-radius: 0px 0.5em 0.5em 0px;
+    flex-shrink: 0;
+}
+
+#section-subscribe .email .input {
+    border: 1px solid var(--color-border-input);
+    border-radius: 0.5em 0px 0px 0.5em;
+    background-color: var(--color-bg-input);
+    color: var(--color-text-input);
+    padding-left: 3rem;
+    padding-block: 0.5rem;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+#section-subscribe .email input::placeholder {
+    color: var(--color-text-input);
+}
+
+#section-subscribe .email input:focus {
+    outline: none;
+    border-color: var(--color-border-input);
+}
+
+#section-subscribe .email .input-icon {
+    position: absolute;
+    width: 1.125rem;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}

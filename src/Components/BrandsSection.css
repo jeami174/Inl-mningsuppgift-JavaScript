@@ -1,0 +1,20 @@
+/* SECTION-BRANDS START */
+
+#section-brands {
+    display: none;
+    background-color: var(--color-bg);
+}
+
+.brand-box {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    height: 100px;
+    width: 196px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+/* SECTION-BRANDS END */
