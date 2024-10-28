@@ -1,0 +1,28 @@
+#section-faq {
+    padding-block: 2rem;
+}
+
+#section-faq .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#section-faq .questions {
+    text-align: center;
+}
+
+#section-faq .questions p {
+    font-size: 1.125rem;
+    color: var(--color-text-body);
+}
+
+#section-faq .contact-card {
+    display: none;
+}
+
+
+#section-faq .btn-primary {
+    width: 9rem;
+    margin-top: 3rem;
+    align-self: center;
+}

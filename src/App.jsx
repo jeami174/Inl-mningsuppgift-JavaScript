@@ -7,6 +7,7 @@ import SectionInfo from "./Components/SectionInfo";
 import SectionClients from "./Components/SectionClients";
 import SectionSubscribe from "./Components/SectionSubscribe";
 import Footer from "./Components/Footer";
+import FAQSection from "./Components/FAQSection";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <BrandsSection />
                 <AppFeaturesSection />
                 <HowDoesItWork />
+                <FAQSection />
                 <SectionInfo />
                 <SectionClients />
                 <SectionSubscribe />
