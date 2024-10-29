@@ -2,42 +2,111 @@
     text-align: center;
     background-color: var(--color-bg-gray);
     padding-block: 2rem;
+}
 
-    .workdesktop,
-    .worktablet {
+#section-how-does-it-work .workdesktop,
+#section-how-does-it-work .worktablet {
+    display: none;
+}
+
+#section-how-does-it-work .h1 {
+    padding-top: 1rem;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+#section-how-does-it-work .workmobile {
+    padding-bottom: 2rem;
+}
+
+#section-how-does-it-work .workimagesmobile {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#section-how-does-it-work p {
+    color: var(--color-text-body);
+}
+
+#section-how-does-it-work .h4 {
+    margin-bottom: 1rem;
+}
+
+/* Tablet-specific styles */
+@media (min-width: 768px) {
+    #section-how-does-it-work .workmobile {
         display: none;
     }
 
-    .workimagestablet,
-    .workimagesdesktop {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .h1 {
+    #section-how-does-it-work .h1 {
         padding-top: 1rem;
         font-weight: 800;
-        font-size: 28px;
-        }
-
-    .workmobile {
-        padding-bottom: 2rem;       
+        font-size: 34px;
     }
 
-    .workimagesmobile {
-        display: flex;
-        justify-content: center;
+    #section-how-does-it-work .worktablet {
+        display: block;
+        padding-bottom: 2rem;
+    }
+
+    #section-how-does-it-work .worktablet .workimagestablet {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         padding-left: 3rem;
         padding-right: 3rem;
+        display: flex;
+        justify-content: center;
     }
 
-    p {
+    #section-how-does-it-work .content {
+        max-width: 50ch;
+        margin-inline: auto;
+    }
+
+    #section-how-does-it-work .content .h4 {
+        font-size: 23px;
+        margin-bottom: 1rem;
+    }
+
+    #section-how-does-it-work .content p {
         color: var(--color-text-body);
     }
+}
 
-    .h4 {
+/* Desktop-specific styles */
+@media (min-width: 1400px) {
+    #section-how-does-it-work .worktablet {
+        display: none;
+    }
+
+    #section-how-does-it-work .h1 {
+        padding-top: 1.5rem;
+        font-weight: 800;
+        font-size: 2.5rem;
+    }
+
+    #section-how-does-it-work .workdesktop {
+        display: block;
+        padding-bottom: 3rem;
+    }
+
+    #section-how-does-it-work .workdesktop .workimagesdesktop {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #section-how-does-it-work .content .h4 {
+        font-size: 24px;
         margin-bottom: 1rem;
+    }
+
+    #section-how-does-it-work .content p {
+        color: var(--color-text-body);
     }
 }
