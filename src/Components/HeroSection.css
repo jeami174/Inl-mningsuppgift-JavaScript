@@ -68,13 +68,13 @@
 
     #section-hero .h1 h1 {
         font-size: 44px;
+        padding-bottom: 3rem;
 
     }
 
     #section-hero .content {
         grid-area: content;
         text-align: left;
-        padding-top: 3rem;
  
     }
 
@@ -84,6 +84,7 @@
 
     #section-hero .content p {
         font-size: 18px;
+        margin-bottom: 2rem;
     }
 
     #section-hero .phoneimages {
@@ -131,25 +132,32 @@
     #section-hero .h1 h1 {
         font-size: 56px;
         text-align: left;
-        padding-top: 2rem;
+        padding-top: rem;
         margin-bottom: 0;
     }
 
     #section-hero .phoneimages {
+        position: relative;
         width: 50%;
     }
 
     #section-hero .phoneimages .img-back {
         position: absolute;
         z-index: 998;
-        bottom: -45px;
+        width: 100%;
+
         right: 230px;
+
+
     }
 
     #section-hero .phoneimages .img-front {
         position: absolute;
         z-index: 999;
-        bottom: -45px;
+        width: 100%;
+
+
+
     }
 }
 

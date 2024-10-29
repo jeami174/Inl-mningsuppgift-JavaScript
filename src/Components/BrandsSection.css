@@ -1,5 +1,4 @@
 /* SECTION-BRANDS START */
-
 #section-brands {
     display: none;
     background-color: var(--color-bg);
@@ -17,4 +16,46 @@
     padding-left: 1rem;
 }
 
+/* Tablet media query */
+@media (min-width: 768px) {
+    #section-brands {
+        display: block;
+        padding-top: 2.8rem;
+        padding-bottom: 1rem;
+    }
+    
+    #section-brands .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Döljer specifika varumärken på tablet */
+    #brand-5,
+    #brand-6 {
+        display: none;
+    }
+}
+
+/* Desktop media query */
+@media (min-width: 1400px) {
+    #section-brands {
+        padding-bottom: 5.6rem; /* Extra spacing i desktop-läge */
+    }
+
+    #section-brands .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Visar alla varumärken på desktop */
+    #brand-5,
+    #brand-6 {
+        display: flex;
+    }
+}
 /* SECTION-BRANDS END */
+

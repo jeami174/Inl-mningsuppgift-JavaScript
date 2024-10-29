@@ -1,3 +1,4 @@
+// AppFeaturesSection.jsx
 import React from 'react';
 import creditCardIcon from '../Images/credit-card-icon.svg';
 import shieldIcon from '../Images/shield-icon.svg';
@@ -7,6 +8,7 @@ import walletIcon from '../Images/wallet-icon.svg';
 import happyIcon from '../Images/happy-icon.svg';
 import phoneImage from '../Images/Phone.svg';
 import cardImage from '../Images/card.svg';
+import InfoBox from './InfoBox';
 import './AppFeaturesSection.css';
 
 function AppFeaturesSection() {
@@ -60,13 +62,12 @@ function AppFeaturesSection() {
                 </div>
                 <div className="container-info">
                     {features.map((feature) => (
-                        <div key={feature.id} className="info-box">
-                            <div className="info-icon">
-                                <img src={feature.icon} alt={`${feature.title} icon`} />
-                            </div>
-                            <h3>{feature.title}</h3>
-                            <p>{feature.description}</p>
-                        </div>
+                        <InfoBox
+                            key={feature.id}
+                            icon={feature.icon}
+                            title={feature.title}
+                            description={feature.description}
+                        />
                     ))}
                 </div>
                 <div className="images">
@@ -79,3 +80,4 @@ function AppFeaturesSection() {
 }
 
 export default AppFeaturesSection;
+

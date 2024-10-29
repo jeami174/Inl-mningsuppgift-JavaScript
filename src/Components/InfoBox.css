@@ -1,0 +1,54 @@
+/* InfoBox CSS */
+.info-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.5rem;
+    column-gap: 1.5rem;
+    align-items: start;
+}
+
+.info-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    background-color: var(--color-icon-bg);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.info-icon img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.info-box h3 {
+    grid-column: 2;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin: 0;
+}
+
+.info-box p {
+    grid-column: 2;
+    font-size: 16px;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    padding-bottom: 1.5rem;
+}
+
+/* Media queries for tablet and desktop */
+
+
+
+@media (min-width: 1400px) {
+    /* Desktop-specific styles */
+    .info-box h3 {
+        align-self: center;
+    }
+}
+
