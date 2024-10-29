@@ -1,7 +1,13 @@
 #section-info {
     display: none;
-    background-color: var(--color-bg);
 }
+
+@media (min-width: 1400px) { 
+
+    #section-info {
+        display: block;
+        background-color: var(--color-bg);
+    }
 
 #section-info .container {
     display: grid;
@@ -22,6 +28,7 @@
 #section-info .content1 h2,
 #section-info .content2 h2 {
     margin-bottom: 2.5rem;
+    font-size: 2rem;
 }
 
 #section-info .infolist {
@@ -56,18 +63,4 @@
     padding-bottom: 2.5rem;
 }
 
-#section-info .info-box .infoicon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-icon-bg);
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    width: fit-content;
-    height: fit-content;
-}
-
-#section-info .info-box p {
-    color: var(--color-text-body);
 }
