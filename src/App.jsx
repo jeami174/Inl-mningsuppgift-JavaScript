@@ -18,9 +18,9 @@ const App = () => {
                 <BrandsSection />
                 <AppFeaturesSection />
                 <HowDoesItWork />
-                <FAQSection />
                 <SectionInfo />
                 <SectionClients />
+                <FAQSection />
                 <SectionSubscribe />
             </main>
             <Footer />
