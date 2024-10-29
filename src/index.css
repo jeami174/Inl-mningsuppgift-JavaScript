@@ -138,6 +138,7 @@ ol, ul {
     flex-direction: column;
 }
 
+
 a {
     color: var(--color-primary);
     text-decoration: none;
@@ -145,4 +146,17 @@ a {
 a:hover {
     color: var(--color-primary);
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
 }
