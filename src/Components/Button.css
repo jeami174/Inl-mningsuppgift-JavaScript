@@ -1,20 +1,21 @@
+/* Button.css */
+
 .btn-primary {
     font-size: 0.9rem;
     background-color: var(--color-primary);
     color: var(--color-white);
-    border-radius: 0.375em; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
+    border-radius: 0.375em;
     border: none;
     padding: 0.6em 1.8em;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    text-wrap: nowrap;
     gap: 0.5em;
 }
 
 .btn-primary:hover {
-    background-color: hsl(239, 85%, 70%); /*Lägger in ljusvärde 70% så blir knappen lite ljusare om man hovrar över den */
+    background-color: hsl(239, 85%, 70%);
     color: var(--color-white);
     text-decoration: none;
 }
@@ -29,43 +30,6 @@
     align-items: center;
     text-decoration: none;
     gap: 0.5em;
+    border: none;
 }
 
-.btn-secondary img.show-light {
-    display: inline;
-}
-
-.btn-secondary img.show-dark {
-    display: none;
-}
-
-.dark .btn-secondary img.show-light {
-    display: none;
-}
-
-.dark .btn-secondary img.show-dark {
-    display: inline;
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    text-decoration: none;
-}
-
-
-.btn-contact {
-    display: flex;
-    background-color: var(--color-white);
-    border:none;
-    color: var(--color-primary);
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 0;
-    margin: 0;
-    align-self: left;
-    text-decoration: none;
-    text-wrap: nowrap;
-    align-items: center;
-    gap: 0.5em;
-}

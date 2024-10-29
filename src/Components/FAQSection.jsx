@@ -1,3 +1,4 @@
+// FAQSection.jsx
 import React, { useState } from 'react';
 import Accordion from './Accordion';
 import Button from './Button';
@@ -39,20 +40,20 @@ const FAQSection = () => {
                 </div>
                 <div className="contact-card">
                     <div className="phone">
-                        <img src={contactPhoneIcon} alt="A icon of a phone" />
+                        <img src={contactPhoneIcon} alt="An icon of a phone" />
                         <p>Still have questions?</p>
-                        <Button aria-label="contact us on phone">
+                        <button className="btn-contact-phone">
                             <span>Contact us</span>
                             <img src={arrowRightPurple} alt="Arrow right icon" className="arrowicon" />
-                        </Button>
+                        </button>
                     </div>
                     <div className="text">
-                        <img src={contactTextIcon} alt="A icon of a text" />
+                        <img src={contactTextIcon} alt="An icon of a text" />
                         <p>Don't like phone calls?</p>
-                        <Button aria-label="contact us in a text">
+                        <button className="btn-contact-text">
                             <span>Contact us</span>
                             <img src={arrowRightGreen} alt="Arrow right icon" className="arrowicon" />
-                        </Button>
+                        </button>
                     </div>
                 </div>
                 <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>

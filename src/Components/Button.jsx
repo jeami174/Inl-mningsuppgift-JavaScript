@@ -11,9 +11,8 @@ const Button = ({
     href, 
     icon 
 }) => {
-    const buttonClass = variant === 'secondary' ? 'btn-secondary' : variant === 'contact' ? 'btn-contact' : 'btn-primary';
+    const buttonClass = variant === 'secondary' ? 'btn-secondary' : 'btn-primary';
 
-    // Om href finns, rendera en <a>-tagg
     if (href) {
         return (
             <a 
@@ -21,20 +20,19 @@ const Button = ({
                 className={`${buttonClass} ${className}`}
                 aria-role="button"
             >
-                {icon && <img src={icon} alt="" className="button-icon" />} {/* Rendera ikonen om den finns */}
+                {icon && <img src={icon} alt="" className="button-icon" />} 
                 {children}
             </a>
         );
     }
 
-    // Rendera som <button> om href inte finns
     return (
         <button 
             type={type}
             className={`${buttonClass} ${className}`}
             onClick={onClick}
         >
-            {icon && <img src={icon} alt="" className="button-icon" />} {/* Rendera ikonen om den finns */}
+            {icon && <img src={icon} alt="" className="button-icon" />} 
             {children}
         </button>
     );

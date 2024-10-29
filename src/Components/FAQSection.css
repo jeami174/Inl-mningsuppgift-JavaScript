@@ -1,3 +1,5 @@
+/* FAQSection.css */
+
 #section-faq {
     padding-block: 2rem;
 }
@@ -21,8 +23,82 @@
 }
 
 
-#section-faq .btn-primary {
-    width: 9rem;
-    margin-top: 3rem;
-    align-self: center;
+
+/* Tablet media query */
+@media (min-width: 768px) {
+    #section-faq .container .btn-primary {
+        display: none;
+    }
+
+    #section-faq .contact-card {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    #section-faq .contact-card .phone,
+    #section-faq .contact-card .text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: 0.5rem;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #section-faq .contact-card .phone img,
+    #section-faq .contact-card .text img {
+        width: 28px;
+        flex-shrink: 0;
+    }
+
+    #section-faq .contact-card .phone p,
+    #section-faq .contact-card .text p {
+        font-size: 0.875rem;
+        color: var(--color-text-body);
+    }
+
+    #section-faq .contact-card .phone .btn-contact-phone,
+#section-faq .contact-card .text .btn-contact-text {
+    display: flex;
+    background-color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+#section-faq .contact-card .phone .btn-contact-phone {
+    color: var(--color-primary); /* Blå textfärg */
+}
+
+#section-faq .contact-card .text .btn-contact-text,
+#section-faq .contact-card .text .btn-contact-text span {
+    color: var(--color-succes); /* Grön textfärg */
+}
+}
+
+/* Desktop media query */
+@media (min-width: 1400px) {
+    #section-faq .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 7rem;
+        row-gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    #section-faq .accordion {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+    }
+
+    #section-faq .questions {
+        text-align: left;
+    }
 }
