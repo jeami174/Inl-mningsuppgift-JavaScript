@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from './Button'; // Importerar knappen
-import notificationIcon from '../Images/notification-icon.svg';
-import letterIcon from '../Images/letter.svg';
+import Button from '../../../Components/Button'; // Importerar knappen
+import notificationIcon from '../../../Images/notification-icon.svg';
+import letterIcon from '../../../Images/letter.svg';
 import './SectionSubscribe.css';
 
 const SectionSubscribe = () => {

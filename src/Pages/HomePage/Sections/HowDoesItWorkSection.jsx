@@ -1,11 +1,11 @@
 import React from 'react';
-import workMobile from '../Images/workmobile.svg';
-import workTabletLeft from '../Images/worktabletleft.svg';
-import workTabletCenter from '../Images/worktabletcenter.svg';
-import workTabletRight from '../Images/worktabletright.svg';
-import workDesktopLeft from '../Images/workdesktopleft.svg';
-import workDesktopCenter from '../Images/workdesktopcenter.svg';
-import workDesktopRight from '../Images/workdesktopright.svg';
+import workMobile from '../../../Images/workmobile.svg';
+import workTabletLeft from '../../../Images/worktabletleft.svg';
+import workTabletCenter from '../../../Images/worktabletcenter.svg';
+import workTabletRight from '../../../Images/worktabletright.svg';
+import workDesktopLeft from '../../../Images/workdesktopleft.svg';
+import workDesktopCenter from '../../../Images/workdesktopcenter.svg';
+import workDesktopRight from '../../../Images/workdesktopright.svg';
 import './HowDoesItWorkSection.css';
 
 function HowDoesItWork() {

@@ -1,14 +1,14 @@
 // AppFeaturesSection.jsx
 import React from 'react';
-import creditCardIcon from '../Images/credit-card-icon.svg';
-import shieldIcon from '../Images/shield-icon.svg';
-import barsIcon from '../Images/bars-icon.svg';
-import communicationIcon from '../Images/communication-icon.svg';
-import walletIcon from '../Images/wallet-icon.svg';
-import happyIcon from '../Images/happy-icon.svg';
-import phoneImage from '../Images/Phone.svg';
-import cardImage from '../Images/card.svg';
-import InfoBox from './InfoBox';
+import creditCardIcon from '../../../Images/credit-card-icon.svg';
+import shieldIcon from '../../../Images/shield-icon.svg';
+import barsIcon from '../../../Images/bars-icon.svg';
+import communicationIcon from '../../../Images/communication-icon.svg';
+import walletIcon from '../../../Images/wallet-icon.svg';
+import happyIcon from '../../../Images/happy-icon.svg';
+import phoneImage from '../../../Images/Phone.svg';
+import cardImage from '../../../Images/card.svg';
+import InfoBox from '../../../Components/InfoBox';
 import './AppFeaturesSection.css';
 
 function AppFeaturesSection() {

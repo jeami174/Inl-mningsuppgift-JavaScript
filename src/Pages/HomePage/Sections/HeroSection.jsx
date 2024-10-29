@@ -1,13 +1,13 @@
 import React from 'react';
 import './HeroSection.css';
-import CircleButton from './CircleButton'; 
-import Button from './Button'; // Importera Button
-import appStoreLight from '../Images/appstorelight.svg';
-import appStoreDark from '../Images/icons/Appstoredark.svg';
-import googlePlayLight from '../Images/googleplaylight.svg';
-import googlePlayDark from '../Images/icons/googledark.svg';
-import iPhoneBehind from '../Images/iPhonebehind-desktop.svg';
-import groupImage from '../Images/Group (1).svg';
+import CircleButton from '../../../Components/CircleButton'; 
+import Button from '../../../Components/Button'; // Importera Button
+import appStoreLight from '../../../Images/appstorelight.svg';
+import appStoreDark from '../../../Images/icons/Appstoredark.svg';
+import googlePlayLight from '../../../Images/googleplaylight.svg';
+import googlePlayDark from '../../../Images/icons/googledark.svg';
+import iPhoneBehind from '../../../Images/iPhonebehind-desktop.svg';
+import groupImage from '../../../Images/Group (1).svg';
 
 const HeroSection = () => {
     return (

@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from './Button';
-import InfoBox from './InfoBox'; 
-import creditCardIcon from '../Images/credit-card-icon.svg';
-import walletIcon from '../Images/wallet-icon.svg';
-import checkCircleIcon from '../Images/icons/check-circle.svg';
-import arrowRightIcon from '../Images/icons/arrowright.svg';
-import transferMoneyImage from '../Images/transfermoney.svg';
-import receivePaymentsImage from '../Images/receive-payments.svg';
+import Button from '../../../Components/Button';
+import InfoBox from '../../../Components/InfoBox'; 
+import creditCardIcon from '../../../Images/credit-card-icon.svg';
+import walletIcon from '../../../Images/wallet-icon.svg';
+import checkCircleIcon from '../../../Images/icons/check-circle.svg';
+import arrowRightIcon from '../../../Images/icons/arrowright.svg';
+import transferMoneyImage from '../../../Images/transfermoney.svg';
+import receivePaymentsImage from '../../../Images/receive-payments.svg';
 import './SectionInfo.css';
 
 const SectionInfo = () => {

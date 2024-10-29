@@ -1,13 +1,13 @@
 import Navbar from "./Components/Navbar";
-import HeroSection from "./Components/HeroSection";
-import HowDoesItWork from "./Components/HowDoesItWorkSection";
-import AppFeaturesSection from "./Components/AppFeaturesSection";
-import BrandsSection from "./Components/BrandsSection";
-import SectionInfo from "./Components/SectionInfo";
-import SectionClients from "./Components/SectionClients";
-import SectionSubscribe from "./Components/SectionSubscribe";
+import HeroSection from "./Pages/HomePage/Sections/HeroSection";
+import HowDoesItWork from "./Pages/HomePage/Sections/HowDoesItWorkSection";
+import AppFeaturesSection from "./Pages/HomePage/Sections/AppFeaturesSection";
+import BrandsSection from "./Pages/HomePage/Sections/BrandsSection";
+import SectionInfo from "./Pages/HomePage/Sections/SectionInfo";
+import SectionClients from "./Pages/HomePage/Sections/SectionClients";
+import SectionSubscribe from "./Pages/HomePage/Sections/SectionSubscribe";
 import Footer from "./Components/Footer";
-import FAQSection from "./Components/FAQSection";
+import FAQSection from "./Pages/HomePage/Sections/FAQSection";
 
 const App = () => {
     return (

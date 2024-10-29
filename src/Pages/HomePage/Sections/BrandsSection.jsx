@@ -1,10 +1,10 @@
 import React from 'react';
-import brand1 from '../Images/brand1.svg';
-import brand2 from '../Images/Brand2.svg';
-import brand3 from '../Images/Brand3.svg';
-import brand4 from '../Images/Brand4.svg';
-import brand5 from '../Images/Brand5.svg';
-import brand6 from '../Images/Brand6.svg';
+import brand1 from '../../../Images/brand1.svg';
+import brand2 from '../../../Images/Brand2.svg';
+import brand3 from '../../../Images/Brand3.svg';
+import brand4 from '../../../Images/Brand4.svg';
+import brand5 from '../../../Images/Brand5.svg';
+import brand6 from '../../../Images/Brand6.svg';
 import './BrandsSection.css';
 
 const brandData = [

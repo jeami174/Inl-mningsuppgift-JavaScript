@@ -1,11 +1,11 @@
 // FAQSection.jsx
 import React, { useState } from 'react';
-import Accordion from './Accordion';
-import Button from './Button';
-import contactPhoneIcon from '../Images/icons/contactphone.svg';
-import contactTextIcon from '../Images/icons/contactstext.svg';
-import arrowRightPurple from '../Images/icons/arrowrightpurple.svg';
-import arrowRightGreen from '../Images/icons/arrowrightgreen.svg';
+import Accordion from '../../../Components/Accordion';
+import Button from '../../../Components/Button';
+import contactPhoneIcon from '../../../Images/icons/contactphone.svg';
+import contactTextIcon from '../../../Images/icons/contactstext.svg';
+import arrowRightPurple from '../../../Images/icons/arrowrightpurple.svg';
+import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
 
 const FAQSection = () => {

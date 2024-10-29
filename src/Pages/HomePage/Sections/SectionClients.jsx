@@ -1,10 +1,10 @@
 import React from 'react';
 import './SectionClients.css';
-import quoteIcon from '../Images/icons/iconquote.svg';
-import rating4Stars from '../Images/icons/rating4stars.svg';
-import rating5Stars from '../Images/icons/rating5stars.svg';
-import clientWoman from '../Images/icons/clientwoman.svg';
-import clientMale from '../Images/icons/clientmale.svg';
+import quoteIcon from '../../../Images/icons/iconquote.svg';
+import rating4Stars from '../../../Images/icons/rating4stars.svg';
+import rating5Stars from '../../../Images/icons/rating5stars.svg';
+import clientWoman from '../../../Images/icons/clientwoman.svg';
+import clientMale from '../../../Images/icons/clientmale.svg';
 
 const SectionClients = () => {
     return (
