@@ -1,58 +1,69 @@
-import React from 'react';
+// SectionClients.jsx
+import React, { useState, useEffect } from 'react';
 import './SectionClients.css';
 import quoteIcon from '../../../Images/icons/iconquote.svg';
-import rating4Stars from '../../../Images/icons/rating4stars.svg';
-import rating5Stars from '../../../Images/icons/rating5stars.svg';
-import clientWoman from '../../../Images/icons/clientwoman.svg';
-import clientMale from '../../../Images/icons/clientmale.svg';
+import starIcon from '../../../Images/icons/rating4stars.svg'; // Används för varje stjärna
+import './SectionClients.css';
 
 const SectionClients = () => {
+    const [testimonials, setTestimonials] = useState([]); // State för testimonials
+
+    // Asynkron funktion för att hämta testimonials från API:t
+    const fetchData = async () => {
+        try {
+            const response = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials');
+            const contentType = response.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                throw new Error("Response is not JSON");
+            }
+            const data = await response.json();
+            setTestimonials(data); // Uppdatera state med API-datan
+        } catch (error) {
+            console.error('Error fetching testimonials:', error);
+        }
+    };
+
+    // Körs när komponenten laddas första gången
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    // Funktion för att rendera stjärnor baserat på rating
+    const renderStars = (rating) => {
+        return Array.from({ length: rating }, (_, index) => (
+            <img key={index} src={starIcon} alt="star" className="star-icon" />
+        ));
+    };
+
     return (
         <section aria-label="clients love our app" id="section-clients">
             <div className="container">
                 <h2 className="h1">Clients are Loving Our App</h2>
-                
-                <div className="card">
-                    <div className="quote">
-                        <img src={quoteIcon} alt="Quotes icon" />
-                    </div>
-                    <img src={rating4Stars} alt="rating four stars" />
-                    <p>
-                        Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus,
-                        egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis
-                        sit amet.
-                    </p>
-                    <div className="client">
-                        <div className="client-icon">
-                            <img src={clientWoman} alt="picture of a female client" />
+
+                {testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="card">
+                        <div className="quote">
+                            <img src={quoteIcon} alt="Quotes icon" />
                         </div>
-                        <h3>Fannie Summers</h3>
-                        <p>Designer</p>
-                    </div>
-                </div>
-                
-                <div className="card">
-                    <div className="quote">
-                        <img src={quoteIcon} alt="Quotes icon" />
-                    </div>
-                    <img src={rating5Stars} alt="rating five stars" />
-                    <p>
-                        Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum
-                        nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget
-                        nunc.
-                    </p>
-                    <div className="client">
-                        <div className="client-icon">
-                            <img src={clientMale} alt="picture of a male client" />
+
+                        <div className="stars">
+                            {renderStars(testimonial.starRating)}
                         </div>
-                        <h3>Albert Flores</h3>
-                        <p>Developer</p>
+
+                        <p>{testimonial.comment}</p>
+
+                        <div className="client">
+                            <div className="client-icon">
+                                <img src={testimonial.avatarUrl} alt={`picture of ${testimonial.author}`} />
+                            </div>
+                            <h3>{testimonial.author}</h3>
+                            <p>{testimonial.jobRole}</p>
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
         </section>
     );
 };
 
 export default SectionClients;
-
