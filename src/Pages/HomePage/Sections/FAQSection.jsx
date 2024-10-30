@@ -1,5 +1,5 @@
 // FAQSection.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Accordion from '../../../Components/Accordion';
 import Button from '../../../Components/Button';
 import contactPhoneIcon from '../../../Images/icons/contactphone.svg';
@@ -9,16 +9,28 @@ import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
 
 const FAQSection = () => {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [faqs, setFaqs] = useState([]); // State för att lagra FAQ-data
+    const [openIndex, setOpenIndex] = useState(null); // State för att spåra öppen accordion
 
-    const faqs = [
-        { question: "Is any of my personal information stored in the App?", answer: "Nunc duis id aenean gravida tincidunt..." },
-        { question: "What formats can I download my transaction history in?", answer: "Nunc duis id aenean gravida tincidunt..." },
-        { question: "Can I schedule future transfers?", answer: "Nunc duis id aenean gravida tincidunt..." },
-        { question: "When can I use Banking App services?", answer: "Nunc duis id aenean gravida tincidunt..." },
-        { question: "Can I create my own password that is easy for me to remember?", answer: "Nunc duis id aenean gravida tincidunt..." },
-        { question: "What happens if I forget or lose my password?", answer: "Nunc duis id aenean gravida tincidunt..." }
-    ];
+    // Asynkron funktion för att hämta data från API:t
+    const fetchData = async () => {
+        try {
+            const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
+            const contentType = response.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                throw new Error("Response is not JSON");
+            }
+            const data = await response.json();
+            setFaqs(data); // Uppdaterar state med API-datan
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    // Körs när komponenten laddas första gången
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <section aria-label="FAQ" id="section-faq">
@@ -30,9 +42,9 @@ const FAQSection = () => {
                 <div className="accordion">
                     {faqs.map((faq, index) => (
                         <Accordion
-                            key={index}
-                            title={faq.question}
-                            content={faq.answer}
+                            key={faq.id} // Använd `id` som nyckel för unika identifierare
+                            title={faq.title} // Uppdaterad till `title`
+                            content={faq.content} // Uppdaterad till `content`
                             isOpen={openIndex === index}
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                         />
