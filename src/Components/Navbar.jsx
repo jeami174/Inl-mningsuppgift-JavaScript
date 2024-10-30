@@ -6,6 +6,7 @@ import Logotype from '../Images/logos/Logotype.svg';
 import Logotypedark from '../Images/logos/Logotypedark.svg';
 import UserIcon from '../Images/icons/User.svg';
 import './Navbar.css';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -53,13 +54,13 @@ const Navbar = () => {
     return (
         <nav className="main-nav" aria-label="main navigation">
             <div className="container">
-                <a href="index.html" aria-label="To Mainpage">
+                <Link to="/" aria-label="To Mainpage">
                     <img
                         className={isDarkMode ? 'show-dark' : 'show-light'}
                         src={isDarkMode ? Logotypedark : Logotype}
                         alt="Silicon Logotype"
                     />
-                </a>
+                </Link>
                 <div className="darkmode-toggle">
                     <p>Dark Mode</p>
                     <ToggleButton
@@ -76,7 +77,10 @@ const Navbar = () => {
                 />
                 <ul id="main-menu" className={`main-menu ${isMenuOpen ? '' : 'hide'}`}>
                     <li>
-                        <a className="nav-link" href="#">Features</a>
+                        <NavLink className="nav-link" to="/">Features</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className="Contact" to="/Contact">Contact</NavLink>
                     </li>
                     <li>
                         <Button 
