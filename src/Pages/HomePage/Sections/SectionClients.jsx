@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import './SectionClients.css';
 import quoteIcon from '../../../Images/icons/iconquote.svg';
-import starIcon from '../../../Images/icons/rating4stars.svg'; // Används för varje stjärna
+import starIcon from '../../../Images/icons/rating4stars.svg';
 import './SectionClients.css';
 
 const SectionClients = () => {
-    const [testimonials, setTestimonials] = useState([]); // State för testimonials
+    const [testimonials, setTestimonials] = useState([]);
 
-    // Asynkron funktion för att hämta testimonials från API:t
     const fetchData = async () => {
         try {
             const response = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials');
@@ -17,18 +16,16 @@ const SectionClients = () => {
                 throw new Error("Response is not JSON");
             }
             const data = await response.json();
-            setTestimonials(data); // Uppdatera state med API-datan
+            setTestimonials(data);
         } catch (error) {
             console.error('Error fetching testimonials:', error);
         }
     };
 
-    // Körs när komponenten laddas första gången
     useEffect(() => {
         fetchData();
     }, []);
 
-    // Funktion för att rendera stjärnor baserat på rating
     const renderStars = (rating) => {
         return Array.from({ length: rating }, (_, index) => (
             <img key={index} src={starIcon} alt="star" className="star-icon" />

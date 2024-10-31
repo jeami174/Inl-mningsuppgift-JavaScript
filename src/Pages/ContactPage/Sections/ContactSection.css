@@ -1,0 +1,48 @@
+/* Grundläggande styling för hela kontaktformuläret */
+.ContactSection {
+padding-top: 4rem;
+background-color: var(--color-bg-gray);
+}
+
+.ContactSection .card {
+    background-color: var(--color-bg-card);
+    padding: 4rem;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 636px;
+    width: 100%;
+}
+
+.ContactSection .headline h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-heading); 
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.ContactSection .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactSection .form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: --(--color-text-body);
+}
+
+.ContactSection .input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: var(--color-gray-800);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.ContactSection .input:focus {
+    border-color: var(--color-primary); 
+}
