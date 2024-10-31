@@ -5,7 +5,7 @@ import './ContactSection.css';
 const Contact = () => {
     return (
         <>
-          <section aria-label="Contact" id="section-contact" className="ContactSection">
+            <section aria-label="Contact" id="section-contact" className="ContactSection">
                 <div className="container">
                     <div className="heading">
                         <h2 className="h2">Contact Us</h2>
@@ -28,7 +28,7 @@ const Contact = () => {
                             </div>
 
                             {/* Dropdown för specialist */}
-                            <div className="form-group">
+                            <div className="form-group specialist-group">
                                 <label htmlFor="specialist">Specialist</label>
                                 <select className="input" id="specialist" name="specialist">
                                     <option value="">Select a specialist</option>
@@ -52,3 +52,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
