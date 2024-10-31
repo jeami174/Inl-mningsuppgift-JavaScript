@@ -14,17 +14,17 @@ const Contact = () => {
                         <div className="headline">
                             <h3>Get Online Consultation</h3>
                         </div>
-                        <form className="contact-form">
+                        <form className="contact-form" noValidate>
                             {/* Fält för full name */}
                             <div className="form-group">
                                 <label htmlFor="fullname">Full Name</label>
-                                <input className="input" type="text" id="fullname" name="fullname" />
+                                <input className="input" type="text" id="fullname" name="fullname" required/>
                             </div>
 
                             {/* Fält för email address */}
                             <div className="form-group">
                                 <label htmlFor="email">Email address</label>
-                                <input className="input" type="email" id="email" name="email" />
+                                <input className="input" type="email" id="email" name="email" required/>
                             </div>
 
                             {/* Dropdown för specialist */}

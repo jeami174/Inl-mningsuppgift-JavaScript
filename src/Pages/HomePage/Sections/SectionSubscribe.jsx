@@ -20,9 +20,9 @@ const SectionSubscribe = () => {
                             <h2>Subscribe to our newsletter</h2>
                         </div>
                     </div>
-                    <form className="email">
+                    <form className="email" noValidate>
                         <img className="input-icon" src={letterIcon} alt="letter icon" />
-                        <input className="input" type="email" placeholder="Your email" />
+                        <input className="input" type="email" placeholder="Your email" required/>
                         <Button>Subscribe</Button>
                     </form>
                 </div>
