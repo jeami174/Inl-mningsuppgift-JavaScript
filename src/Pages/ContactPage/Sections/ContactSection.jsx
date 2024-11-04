@@ -36,9 +36,6 @@ const Contact = () => {
                     <div className="heading">
                         <h2 className="h2">Contact Us</h2>
                     </div>
-                    <div className="btn">
-                    <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>
-                    </div>
                     <div className="container-info">
                     {features.map((feature) => (
                         <InfoBox
@@ -53,7 +50,7 @@ const Contact = () => {
                         />
                     ))}
                     </div>
-                    <div className="card">
+                    <div className="cardcontact">
                         <div className="headline">
                             <h3>Get Online Consultation</h3>
                         </div>

@@ -63,7 +63,9 @@
 .show-light { display:block; }
 .show-dark { display:none; }
 
-*{
+*
+*::before,
+*::after{
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) ; /* Stänger av higlight vid tap */
 }
@@ -86,6 +88,7 @@ body {
     line-height: 1.8;
     background-color: var(--color-bg);
 }
+
 
 input, button, textarea, select {
     font: inherit;
@@ -122,14 +125,8 @@ ol, ul {
 
 /* UTILITY CLASSES */
 
-.wrapper {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh;
-}
-
 .container {
-    width: 100%;
+    max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-left: auto;
@@ -137,7 +134,6 @@ ol, ul {
     display: flex;
     flex-direction: column;
 }
-
 
 a {
     color: var(--color-primary);

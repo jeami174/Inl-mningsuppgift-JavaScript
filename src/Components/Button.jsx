@@ -18,7 +18,6 @@ const Button = ({
             <a 
                 href={href}
                 className={`${buttonClass} ${className}`}
-                aria-role="button"
             >
                 {icon && <img src={icon} alt="" className="button-icon" />} 
                 {children}

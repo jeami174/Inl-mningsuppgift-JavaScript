@@ -68,7 +68,9 @@ const FAQSection = () => {
                         </button>
                     </div>
                 </div>
+                <div className="btn-now">
                 <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>
+                </div>
             </div>
         </section>
     );

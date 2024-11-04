@@ -1,6 +1,8 @@
 .faq-wrapper {
     box-shadow: 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03);
-    margin: 1rem 0;
+    margin: 1rem;
+    margin-right: 0;
+    margin-left: 0;
     border-radius: 0.5em;
 }
 
@@ -22,6 +24,7 @@
 .accordion-icon img {
     width: 36px;
     height: 36px;
+    margin-left: 0.25rem;
 }
 
 .panel {

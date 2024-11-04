@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MobileButton from './MobileButton';
 import ToggleButton from './ToggleButton';
-import Button from './Button'; // Importera din Button-komponent
+import Button from './Button'; 
 import Logotype from '../Images/logos/Logotype.svg';
 import Logotypedark from '../Images/logos/Logotypedark.svg';
 import UserIcon from '../Images/icons/User.svg';
@@ -11,6 +12,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const hasSetDarkMode = localStorage.getItem('darkmode');
@@ -51,6 +53,10 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const handleButtonClick = () => {
+        navigate('/');
+    };
+
     return (
         <nav className="main-nav" aria-label="main navigation">
             <div className="container">
@@ -88,7 +94,7 @@ const Navbar = () => {
                             className="btn-primary"
                             aria-label="Sign in or up"
                             icon={UserIcon}
-                            href="#"
+                            onClick={handleButtonClick}
                         >
                             Sign in / up
                         </Button>

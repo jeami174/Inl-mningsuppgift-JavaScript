@@ -2,4 +2,25 @@
     background-color: var(--color-bg);
     padding-block: 2rem;
     }
-    
+
+    .MapSection .infolist li {
+        display: flex;
+        align-items: flex-start;
+        padding: 0.25rem;
+    }
+
+    .MapSection .infolist li p {
+        color: var(--color-text-body);
+    }
+
+    .MapSection .checkicon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    .MapSection .strong {
+        font-weight: 800;
+        color: var(--color-text-heading);
+    }

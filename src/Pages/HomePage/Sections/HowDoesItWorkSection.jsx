@@ -10,7 +10,7 @@ import './HowDoesItWorkSection.css';
 
 function HowDoesItWork() {
     return (
-        <section aria-label="How does it work" id="section-how-does-it-work">
+        <section aria-label="How does it work" className="section-how-does-it-work">
             <div className="container">
                     <h2 className="h1">How Does It Work?</h2>
                 <div className="workmobile">
