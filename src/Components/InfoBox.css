@@ -37,7 +37,7 @@
     font-size: 16px;
     color: var(--color-text-body);
     line-height: 1.6;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
 }
 
 .info-box-button {
@@ -45,7 +45,7 @@
     display: flex;
     background-color: var(--color-bg-gray);
     color: var(--color-primary);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     padding: 0;
     margin: 0;

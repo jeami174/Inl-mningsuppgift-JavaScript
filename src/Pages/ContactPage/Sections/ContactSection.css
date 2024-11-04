@@ -1,6 +1,6 @@
 .ContactSection {
-padding-block: 2rem;
 background-color: var(--color-bg-gray);
+padding-block: 2rem;
 }
 
 .ContactSection .container {
@@ -8,6 +8,7 @@ background-color: var(--color-bg-gray);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .ContactSection .container-info {
@@ -98,10 +99,14 @@ background-color: var(--color-bg-gray);
     border-color: var(--color-primary);
 }
 
+.ContactSection .card .btn-primary {
+    margin-top: 7rem; /* Justera detta värde för önskad marginal */
+}
+
 /* Tablet media query */
 @media (min-width: 768px) {
 
-    .ContactSection .btn-primary {
+    .ContactSection .btn {
         display: none;
     }
 
@@ -113,8 +118,39 @@ background-color: var(--color-bg-gray);
         justify-content: space-between;
         padding-bottom: 2rem;
     }
+
+    .ContactSection .container-info .info-box h3 {
+        font-size: 24px;
+    }
 }
 
 @media (min-width: 1400px) {
-    
+    .ContactSection .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 7rem;
+        row-gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    .ContactSection .card {
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        justify-self: end;
+    }
+
+    .ContactSection .container-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+    }
+
+    .ContactSection .heading h2 {
+        text-align: left; 
+        font-size: 40px;
+        margin-top: 0;
+    }
 }
