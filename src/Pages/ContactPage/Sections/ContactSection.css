@@ -1,6 +1,7 @@
 .ContactSection {
 background-color: var(--color-bg-gray);
 padding-block: 2rem;
+padding-top: 4rem;
 }
 
 .ContactSection .container {
@@ -122,6 +123,12 @@ padding-block: 2rem;
     .ContactSection .container-info .info-box h3 {
         font-size: 24px;
     }
+
+    .ContactSection .card {
+        position: relative;
+        margin-bottom: -15rem; /* Justera detta värde för att kontrollera hur mycket kortet sträcker sig över nästa sektion */
+        z-index: 2; 
+    }
 }
 
 @media (min-width: 1400px) {
@@ -151,6 +158,6 @@ padding-block: 2rem;
     .ContactSection .heading h2 {
         text-align: left; 
         font-size: 40px;
-        margin-top: 0;
+        margin-top: 3rem;
     }
 }
