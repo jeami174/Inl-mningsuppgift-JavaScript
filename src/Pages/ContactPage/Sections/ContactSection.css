@@ -1,7 +1,7 @@
 .ContactSection {
 background-color: var(--color-bg-gray);
-padding-block: 2rem;
 padding-top: 6rem;
+padding-bottom: 2rem;
 }
 
 .ContactSection .container {

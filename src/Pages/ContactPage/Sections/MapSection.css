@@ -3,9 +3,27 @@
     padding-block: 2rem;
     }
 
+    .MapSection .Adresses {
+        padding-inline: 1rem;
+    }
+
+.MapSection .image {
+    display: none;
+}
+
+.MapSection .infolist {
+    list-style: none;
+    padding-left: 2rem; /* Samma värde som rubrikens padding */
+    margin: 0;
+}
+
+.MapSection .Center1 h2,
+.MapSection .Center2 h2 {
+    padding-left: 2rem;
+}
+
     .MapSection .infolist li {
         display: flex;
-        align-items: flex-start;
         padding: 0.25rem;
     }
 
@@ -23,4 +41,14 @@
     .MapSection .strong {
         font-weight: 800;
         color: var(--color-text-heading);
+    }
+
+.MapSection .Center2 h2 {
+    padding-top: 2rem;
+}
+
+    @media (min-width: 768px) { 
+        .MapSection .image {
+            display: block;
+        }
     }
