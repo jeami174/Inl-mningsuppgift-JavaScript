@@ -21,7 +21,7 @@ const FAQSection = () => {
                 throw new Error("Response is not JSON");
             }
             const data = await response.json();
-            setFaqs(data); // Uppdaterar state med API-datan
+            setFaqs(data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -42,9 +42,9 @@ const FAQSection = () => {
                 <div className="accordion">
                     {faqs.map((faq, index) => (
                         <Accordion
-                            key={faq.id} // Använd `id` som nyckel för unika identifierare
-                            title={faq.title} // Uppdaterad till `title`
-                            content={faq.content} // Uppdaterad till `content`
+                            key={faq.id}
+                            title={faq.title}
+                            content={faq.content}
                             isOpen={openIndex === index}
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                         />

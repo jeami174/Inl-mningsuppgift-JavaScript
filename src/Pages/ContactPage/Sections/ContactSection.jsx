@@ -13,7 +13,9 @@ const Contact = () => {
             title: "Email us",
             description: "Please feel free to drop us a line. We will respond as soon as possible.",
             iconBackgroundColor: '#FFF', // Ny bakgrundsfärg
-            iconBorderRadius: '50%' // Gör bakgrunden helt rund
+            iconBorderRadius: '50%', // Gör bakgrunden helt rund
+            showButton: true, // Visa knappen
+            buttonText: 'Leave a message' // Anpassa knappens text
         },
         {
             id: "info-2",
@@ -21,7 +23,9 @@ const Contact = () => {
             title: "Careers",
             description: "Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.",
             iconBackgroundColor: '#FFF',
-            iconBorderRadius: '50%' // Gör även denna bakgrund rund
+            iconBorderRadius: '50%', // Gör bakgrunden helt rund
+            showButton: true, // Visa knappen
+            buttonText: 'Send an application' // Anpassa knappens text
         }
     ];
 
@@ -32,6 +36,7 @@ const Contact = () => {
                     <div className="heading">
                         <h2 className="h2">Contact Us</h2>
                     </div>
+                    <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>
                     <div className="container-info">
                     {features.map((feature) => (
                         <InfoBox
@@ -41,9 +46,11 @@ const Contact = () => {
                             description={feature.description}
                             iconBackgroundColor={feature.iconBackgroundColor}
                             iconBorderRadius={feature.iconBorderRadius}
+                            showButton={feature.showButton}
+                            buttonText={feature.buttonText}
                         />
                     ))}
-                </div>
+                    </div>
                     <div className="card">
                         <div className="headline">
                             <h3>Get Online Consultation</h3>

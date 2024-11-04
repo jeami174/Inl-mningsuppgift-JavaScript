@@ -58,7 +58,7 @@
         color: var(--color-text-body);
     }
 
-    #section-faq .contact-card .phone .btn-contact-phone,
+#section-faq .contact-card .phone .btn-contact-phone,
 #section-faq .contact-card .text .btn-contact-text {
     display: flex;
     background-color: var(--color-white);
@@ -74,12 +74,12 @@
 }
 
 #section-faq .contact-card .phone .btn-contact-phone {
-    color: var(--color-primary); /* Blå textfärg */
+    color: var(--color-primary);
 }
 
 #section-faq .contact-card .text .btn-contact-text,
 #section-faq .contact-card .text .btn-contact-text span {
-    color: var(--color-succes); /* Grön textfärg */
+    color: var(--color-succes);
 }
 }
 
