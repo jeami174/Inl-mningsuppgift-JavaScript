@@ -36,10 +36,11 @@
     cursor: pointer;
     position: absolute;
     right: 1rem;
+    top: 0;
     z-index: 9999;
 }
 
-/* Media queries för större skärmar */
+
 @media (min-width: 992px) {
     /* Visa navbar och dölj mobilknapp på större skärmar */
     .navbar {
@@ -83,7 +84,7 @@
     text-decoration: underline;
 }
 
-/* Auth-knapp dolt för mobilt */
+
 #auth-signin {
     display: none;
 }

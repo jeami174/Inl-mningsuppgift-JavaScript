@@ -3,9 +3,10 @@
     align-items: center;
     gap: 1rem;
     z-index: 10000;
-    margin-right: 1rem; /* Lägger till avstånd till höger */
-}
+    right: 5rem;
+    position: absolute;
 
+}
 
 .darkmode-toggle p {
     display: none;
@@ -13,14 +14,9 @@
     font-weight: 600;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 540px) {
     .darkmode-toggle p {
         display: inline;
     }
 }
 
-@media (min-width: 1400px) {
-    .darkmode-toggle {
-        gap: 1.5rem;
-    }
-}
