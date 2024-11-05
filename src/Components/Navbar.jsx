@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+// Navbar.js
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MobileButton from './MobileButton';
-import ToggleButton from './ToggleButton';
-import Button from './Button'; 
+import DarkModeSwitch from './DarkModeSwitch';
+import Button from './Button';
 import Logotype from '../Images/logos/Logotype.svg';
 import Logotypedark from '../Images/logos/Logotypedark.svg';
 import UserIcon from '../Images/icons/User.svg';
@@ -10,44 +11,8 @@ import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const hasSetDarkMode = localStorage.getItem('darkmode');
-        if (hasSetDarkMode === null) {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                enableDarkMode();
-            } else {
-                disableDarkMode();
-            }
-        } else if (hasSetDarkMode === 'on') {
-            enableDarkMode();
-        } else if (hasSetDarkMode === 'off') {
-            disableDarkMode();
-        }
-    }, []);
-
-    const handleDarkModeToggle = () => {
-        if (!isDarkMode) {
-            enableDarkMode();
-            localStorage.setItem('darkmode', 'on');
-        } else {
-            disableDarkMode();
-            localStorage.setItem('darkmode', 'off');
-        }
-    };
-
-    const enableDarkMode = () => {
-        setIsDarkMode(true);
-        document.documentElement.classList.add('dark');
-    };
-
-    const disableDarkMode = () => {
-        setIsDarkMode(false);
-        document.documentElement.classList.remove('dark');
-    };
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -58,52 +23,38 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="main-nav" aria-label="main navigation">
-            <div className="container">
-                <Link to="/" aria-label="To Mainpage">
-                    <img
-                        className={isDarkMode ? 'show-dark' : 'show-light'}
-                        src={isDarkMode ? Logotypedark : Logotype}
-                        alt="Silicon Logotype"
-                    />
+        <header>
+            <div id="container-1" className="container nav">
+                <Link id="logo" to="/" aria-label="To Mainpage">
+                    <img className="show-light" src={Logotype} alt="Silicon Logotype" />
+                    <img className="show-dark" src={Logotypedark} alt="Silicon Logotype Dark" />
                 </Link>
-                <div className="darkmode-toggle">
-                    <p>Dark Mode</p>
-                    <ToggleButton
-                        checked={isDarkMode}
-                        onChange={handleDarkModeToggle}
-                    />
-                </div>
-                <MobileButton
-                    onClick={handleMenuToggle}
-                    className={isMenuOpen ? 'open' : ''}
-                    aria-controls="main-menu"
-                    aria-expanded={isMenuOpen}
-                    aria-label="toggle navigation"
-                />
-                <ul id="main-menu" className={`main-menu ${isMenuOpen ? '' : 'hide'}`}>
-                    <li>
-                        <NavLink className="nav-link" to="/">Features</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className="Contact" to="/Contact">Contact</NavLink>
-                    </li>
-                    <li>
-                        <Button 
-                            variant="primary"
-                            className="btn-primary"
-                            aria-label="Sign in or up"
-                            icon={UserIcon}
-                            onClick={handleButtonClick}
-                        >
-                            Sign in / up
-                        </Button>
-                    </li>
-                </ul>
+
+                {/* Navigeringsmenyn visas endast på skärmar >= 992px */}
+                <nav id="main-menu" className={`navbar ${isMenuOpen ? 'show' : ''}`} aria-label="main navigation">
+                    <NavLink className="nav-link" to="/">Features</NavLink>
+                    <NavLink className="nav-link" to="/Contact">Contact</NavLink>
+                    <Button 
+                        id="auth-signin" 
+                        variant="primary"
+                        className="btn-primary" 
+                        aria-label="Sign in or up"
+                        icon={UserIcon}
+                        onClick={handleButtonClick}
+                    >
+                        <span>Sign in / up</span>
+                    </Button>
+                </nav>
+
+                <DarkModeSwitch />
+
+                {/* Hamburgarmenyn visas endast på skärmar < 992px */}
+                <button className={`btn-mobile ${isMenuOpen ? 'show' : ''}`} onClick={handleMenuToggle}>
+                    <i className="fa-regular fa-bars"></i>
+                </button>
             </div>
-        </nav>
+        </header>
     );
 };
 
 export default Navbar;
-

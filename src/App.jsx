@@ -3,12 +3,13 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/HomePage/Home";
 import Contact from "./Pages/ContactPage/Contact";
 import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 
 const App = () => {
     return (
         <BrowserRouter>
             <>
-                <Navbar />
+                <Header />
                 <main>
                 <Routes>
                     <Route path="/" element={<Home/>}/>

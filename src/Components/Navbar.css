@@ -6,22 +6,71 @@
     top: 0;
 }
 
-.main-menu {
-    width: 100%;
-    justify-content: space-between;
-    margin-left: 3rem;
-    display: flex;
+#container-1 {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
     align-items: center;
+    padding: 0 1rem; /* 1rem padding på sidorna */
+    margin: 0 auto;
+    max-width: 1320px; /* Maxbredd på 1320px för desktop */
 }
 
-.hide {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Dölj navbaren under 992px */
+.navbar {
     display: none;
+}
+
+/* Visa navbar när skärmbredden är 992px eller större */
+@media (min-width: 992px) {
+    .navbar {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+/* Hamburgarmenyn visas som standard och döljs vid 992px eller större */
+.btn-mobile {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
+}
+
+@media (min-width: 992px) {
+    /* Döljer hamburgarmenyn när skärmen är 992px eller större */
+    .btn-mobile {
+        display: none;
+    }
+}
+
+.navbar.show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    background-color: var(--color-gray600);
+    height: 100%;
+    width: 100%;
 }
 
 .nav-link {
     color: var(--color-navigation);
     text-decoration: none;
     font-weight: 600;
+    padding: 1rem;
 }
 
 .nav-link:hover,
@@ -30,53 +79,27 @@
     text-decoration: underline;
 }
 
-
-.darkmode-toggle {
-    position: absolute;
-    align-items: center;
-    gap: 1rem;
-    right: 12rem;
-    display: flex;
-    z-index: 10000;
+.active {
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
-@media (max-width: 992px) {
-    .btn-mobile {
-        display: block;
-    }
-
-    .container {
-        position: static;
-    }
-
-    .darkmode-toggle {
-        right: 8rem;
-    }
-
-    .main-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        flex-direction: column-reverse;
-        gap: 1rem;
-        padding-block: 2rem;
-        box-shadow: 0 5px 5px #B4B7C9;
-        background-color: var(--color-bg);
-        z-index: 1000;
-    }
-
-    .nav-link {
-        display: inline-block;
-        padding: 1rem;
-    }
+#auth-signin {
+    display: none;
 }
 
-@media (max-width: 540px) {
-    .darkmode-toggle {
-        right: 4rem;
+/* Tablet-läge och större */
+@media (min-width: 768px) {
+    #container-1 {
+        max-width: 720px;
     }
 
-    .darkmode-toggle p {
-        display: none;
+    .nav {
+        gap: 3rem;
+    }
+
+    #auth-signin {
+        display: inline-flex;
+        padding: 0.5rem 1rem;
     }
 }
