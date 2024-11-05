@@ -1,7 +1,7 @@
 // Navbar.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MobileButton from './MobileButton';
+import MobileButton from './MobileButton';  // Import MobileButton
 import DarkModeSwitch from './DarkModeSwitch';
 import Button from './Button';
 import Logotype from '../Images/logos/Logotype.svg';
@@ -48,10 +48,11 @@ const Navbar = () => {
 
                 <DarkModeSwitch />
 
-                {/* Hamburgarmenyn visas endast på skärmar < 992px */}
-                <button className={`btn-mobile ${isMenuOpen ? 'show' : ''}`} onClick={handleMenuToggle}>
-                    <i className="fa-regular fa-bars"></i>
-                </button>
+                <MobileButton 
+                    onClick={handleMenuToggle} 
+                    isOpen={isMenuOpen} 
+                    className={isMenuOpen ? 'show' : ''}
+                />
             </div>
         </header>
     );

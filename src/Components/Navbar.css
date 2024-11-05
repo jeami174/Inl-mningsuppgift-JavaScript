@@ -1,4 +1,4 @@
-/* Navbar.css */
+/* Navbarens huvudstil */
 .main-nav {
     padding-block: 1rem;
     position: absolute;
@@ -6,36 +6,28 @@
     top: 0;
 }
 
+/* Container för navbar-innehåll */
 #container-1 {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto auto auto; /* En kolumn för logo och tre för innehåll */
     gap: 1.5rem;
     align-items: center;
-    padding: 0 1rem; /* 1rem padding på sidorna */
-    margin: 0 auto;
-    max-width: 1320px; /* Maxbredd på 1320px för desktop */
+    width: 100%;
+    margin: 0;
 }
 
-.logo {
+/* Logo-stil */
+#logo {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    z-index: 1001;
 }
 
-/* Dölj navbaren under 992px */
+/* Dold navbar för mobilt läge */
 .navbar {
     display: none;
 }
 
-/* Visa navbar när skärmbredden är 992px eller större */
-@media (min-width: 992px) {
-    .navbar {
-        display: flex;
-        gap: 1rem;
-    }
-}
-
-/* Hamburgarmenyn visas som standard och döljs vid 992px eller större */
+/* Hamburgerknapp (mobilvy) */
 .btn-mobile {
     display: block;
     background-color: transparent;
@@ -47,25 +39,36 @@
     z-index: 9999;
 }
 
+/* Media queries för större skärmar */
 @media (min-width: 992px) {
-    /* Döljer hamburgarmenyn när skärmen är 992px eller större */
+    /* Visa navbar och dölj mobilknapp på större skärmar */
+    .navbar {
+        display: flex;
+        gap: 1rem;
+    }
+
     .btn-mobile {
         display: none;
     }
 }
 
+/* Öppen navbar i mobilvy */
 .navbar.show {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10rem;
-    background-color: var(--color-gray600);
-    height: 100%;
+    padding-top: 15rem;
+    box-shadow: 0 5px 5px #B4B7C9;
+    background-color: var(--color-bg);
+    height: 60%;
     width: 100%;
+    z-index: 1000;
+    right: 0;
 }
 
+/* Stil för länkar i navbar */
 .nav-link {
     color: var(--color-navigation);
     text-decoration: none;
@@ -74,32 +77,13 @@
 }
 
 .nav-link:hover,
-.nav-link:focus-visible {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
+.nav-link:focus-visible,
 .active {
     color: var(--color-primary);
     text-decoration: underline;
 }
 
+/* Auth-knapp dolt för mobilt */
 #auth-signin {
     display: none;
-}
-
-/* Tablet-läge och större */
-@media (min-width: 768px) {
-    #container-1 {
-        max-width: 720px;
-    }
-
-    .nav {
-        gap: 3rem;
-    }
-
-    #auth-signin {
-        display: inline-flex;
-        padding: 0.5rem 1rem;
-    }
 }
