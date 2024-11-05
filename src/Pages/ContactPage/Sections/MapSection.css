@@ -9,6 +9,12 @@
 
 .MapSection .image {
     display: none;
+    justify-self: center;
+    padding-top: 15rem;
+}
+
+.MapSection .map {
+    border-radius: 8px;
 }
 
 .MapSection .infolist {
@@ -48,7 +54,44 @@
 }
 
     @media (min-width: 768px) { 
+        
         .MapSection .image {
             display: block;
+            
         }
+
+        .MapSection .Adresses {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .MapSection .Center1 h2 {
+            padding-top: 2rem;
+        }
+    }
+
+    @media (min-width: 1400px) { 
+        .MapSection .Container {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            padding-inline: 2rem;
+        }
+
+        .MapSection .Adresses {
+            display: flex;
+            flex-direction: column;
+            grid-column: 2;
+            grid-row: 1 / span 4;
+            padding-top: 7rem;
+
+        }
+
+        .MapSection .image {
+            display: flex;
+            grid-column: 1;
+            grid-row: 1 /span 4;
+            
+        }
+    
     }

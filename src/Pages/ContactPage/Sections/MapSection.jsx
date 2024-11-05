@@ -1,6 +1,5 @@
 import React from 'react'
 import './MapSection.css';
-import checkCircleIcon from '../../../Images/icons/check-circle.svg';
 import placeIcon from '../../../Images/icons/bx-map.svg';
 import phoneIcon from '../../../Images/icons/bx-phone-call.svg';
 import clockIcon from '../../../Images/icons/bx-time-five.svg';
