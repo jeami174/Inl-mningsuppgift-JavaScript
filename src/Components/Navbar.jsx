@@ -12,9 +12,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [bgColor, setBgColor] = useState(''); // State för bakgrundsfärg
+    const [bgColor, setBgColor] = useState('');
     const navigate = useNavigate();
-    const location = useLocation(); // Hämta aktuell route
+    const location = useLocation();
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -25,13 +25,12 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        // Uppdatera bakgrundsfärgen beroende på vilken sida som är aktiv
         if (location.pathname === '/') {
-            setBgColor('var(--color-bg)'); // Bakgrundsfärg för Home
+            setBgColor('var(--color-bg)'); 
         } else if (location.pathname === '/Contact') {
-            setBgColor('var(--color-bg-gray)'); // Bakgrundsfärg för Contact
+            setBgColor('var(--color-bg-gray)'); 
         } else {
-            setBgColor('transparent'); // Standardfärg för övriga sidor
+            setBgColor('transparent'); 
         }
     }, [location.pathname]);
 
@@ -42,7 +41,11 @@ const Navbar = () => {
                     <img className="show-light" src={Logotype} alt="Silicon Logotype" />
                     <img className="show-dark" src={Logotypedark} alt="Silicon Logotype Dark" />
                 </Link>
-                <nav id="main-menu" className={`navbar ${isMenuOpen ? 'show' : ''}`} aria-label="main navigation">
+                <nav
+                    id="main-menu"
+                    className={`navbar ${isMenuOpen ? 'show' : 'hide'}`}
+                    aria-label="main navigation"
+                >
                     <NavLink className="nav-link" to="/">Features</NavLink>
                     <NavLink className="nav-link" to="/Contact">Contact</NavLink>
                     <Button 
