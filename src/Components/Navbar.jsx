@@ -29,8 +29,6 @@ const Navbar = () => {
                     <img className="show-light" src={Logotype} alt="Silicon Logotype" />
                     <img className="show-dark" src={Logotypedark} alt="Silicon Logotype Dark" />
                 </Link>
-
-                {/* Navigeringsmenyn visas endast på skärmar >= 992px */}
                 <nav id="main-menu" className={`navbar ${isMenuOpen ? 'show' : ''}`} aria-label="main navigation">
                     <NavLink className="nav-link" to="/">Features</NavLink>
                     <NavLink className="nav-link" to="/Contact">Contact</NavLink>

@@ -20,3 +20,10 @@
     }
 }
 
+@media (min-width: 992px) {
+    .darkmode-toggle {
+        right: 12rem;
+        position: absolute;
+    
+    }
+}
