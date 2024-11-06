@@ -57,6 +57,42 @@
     transform: translateY(-50%);
 }
 
+.informationbox {
+    background-color: #e0ffe0; /* Ljuskgrön bakgrund för att indikera framgång */
+    border: 1px solid #4CAF50; /* Grön kant */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.informationbox h3 {
+    color: #4CAF50; /* Grön text för rubriken */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.informationbox p {
+    color: #333; /* Mörk text för meddelandet */
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.informationbox .btn-primary {
+    background-color: #4CAF50; /* Grön bakgrund för knappen */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.informationbox .btn-primary:hover {
+    background-color: #45a049; /* Mörkare grön vid hover */
+}
+
 /* Tablet media query */
 @media (min-width: 768px) {
     #section-subscribe .card {
