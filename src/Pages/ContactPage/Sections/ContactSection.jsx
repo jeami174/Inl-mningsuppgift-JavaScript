@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { MessageContext } from '../../../Contexts/MessageContext';
 import Button from '../../../Components/Button';
 import './ContactSection.css';
 import InfoBox from '../../../Components/InfoBox';
@@ -6,16 +7,58 @@ import LetterIcon from '../../../Images/icons/Vector.svg';
 import AddIcon from '../../../Images/icons/add-group.svg';
 
 const Contact = () => {          
+    const { showMessage, clearMessage, message, messageType } = useContext(MessageContext);
+
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        specialist: ''
+    });
+
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        clearMessage();
+
+        try {
+            const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'accept': '*/*'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                showMessage('success', 'Tack för ditt meddelande. Vi återkommer till dig så snart vi kan.');
+                setFormData({ fullName: '', email: '', specialist: '' });
+            } else {
+                showMessage('error', 'Något gick fel, försök igen.');
+            }
+        } catch (error) {
+            showMessage('error', 'Något gick fel, försök igen.');
+        }
+    };
+
     const features = [
         {
             id: "info-1",
             icon: LetterIcon,
             title: "Email us",
             description: "Please feel free to drop us a line. We will respond as soon as possible.",
-            iconBackgroundColor: '#FFF', // Ny bakgrundsfärg
-            iconBorderRadius: '50%', // Gör bakgrunden helt rund
-            showButton: true, // Visa knappen
-            buttonText: 'Leave a message' // Anpassa knappens text
+            iconBackgroundColor: '#FFF', 
+            iconBorderRadius: '50%', 
+            showButton: true,
+            buttonText: 'Leave a message'
         },
         {
             id: "info-2",
@@ -23,9 +66,9 @@ const Contact = () => {
             title: "Careers",
             description: "Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.",
             iconBackgroundColor: '#FFF',
-            iconBorderRadius: '50%', // Gör bakgrunden helt rund
-            showButton: true, // Visa knappen
-            buttonText: 'Send an application' // Anpassa knappens text
+            iconBorderRadius: '50%',
+            showButton: true,
+            buttonText: 'Send an application'
         }
     ];
 
@@ -37,53 +80,77 @@ const Contact = () => {
                         <h2 className="h2">Contact Us</h2>
                     </div>
                     <div className="container-info">
-                    {features.map((feature) => (
-                        <InfoBox
-                            key={feature.id}
-                            icon={feature.icon}
-                            title={feature.title}
-                            description={feature.description}
-                            iconBackgroundColor={feature.iconBackgroundColor}
-                            iconBorderRadius={feature.iconBorderRadius}
-                            showButton={feature.showButton}
-                            buttonText={feature.buttonText}
-                        />
-                    ))}
+                        {features.map((feature) => (
+                            <InfoBox
+                                key={feature.id}
+                                icon={feature.icon}
+                                title={feature.title}
+                                description={feature.description}
+                                iconBackgroundColor={feature.iconBackgroundColor}
+                                iconBorderRadius={feature.iconBorderRadius}
+                                showButton={feature.showButton}
+                                buttonText={feature.buttonText}
+                            />
+                        ))}
                     </div>
                     <div className="cardcontact">
                         <div className="headline">
                             <h3>Get Online Consultation</h3>
                         </div>
-                        <form className="contact-form" noValidate>
-                            {/* Fält för full name */}
-                            <div className="form-group">
-                                <label htmlFor="fullname">Full Name</label>
-                                <input className="input" type="text" id="fullname" name="fullname" required/>
+                        {message ? (
+                            <div className={`informationbox ${messageType}`}>
+                                <h3>{messageType === 'success' ? 'Tack för ditt meddelande' : 'Felmeddelande'}</h3>
+                                <p>{message}</p>
+                                <button className="btn-primary" onClick={clearMessage}>OK</button>
                             </div>
-
-                            {/* Fält för email address */}
-                            <div className="form-group">
-                                <label htmlFor="email">Email address</label>
-                                <input className="input" type="email" id="email" name="email" required/>
-                            </div>
-
-                            {/* Dropdown för specialist */}
-                            <div className="form-group specialist-group">
-                                <label htmlFor="specialist">Specialist</label>
-                                <select className="input" id="specialist" name="specialist">
-                                    <option value="">Select a specialist</option>
-                                    <option value="cardiology">Cardiology</option>
-                                    <option value="neurology">Neurology</option>
-                                    <option value="dermatology">Dermatology</option>
-                                    <option value="orthopedics">Orthopedics</option>
-                                </select>
-                            </div>
-
-                            {/* Skicka-knapp */}
-                            <Button aria-label="Subscribe" type="submit" className="btn-primary">
-                                Make an appointment
-                            </Button>
-                        </form>
+                        ) : (
+                            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                                <div className="form-group">
+                                    <label htmlFor="fullName">Full Name</label>
+                                    <input 
+                                        className="input" 
+                                        type="text" 
+                                        id="fullName" 
+                                        name="fullName" 
+                                        value={formData.fullName} 
+                                        onChange={handleChange} 
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email address</label>
+                                    <input 
+                                        className="input" 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        value={formData.email} 
+                                        onChange={handleChange} 
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group specialist-group">
+                                    <label htmlFor="specialist">Specialist</label>
+                                    <select 
+                                        className="input" 
+                                        id="specialist" 
+                                        name="specialist" 
+                                        value={formData.specialist} 
+                                        onChange={handleChange} 
+                                        required
+                                    >
+                                        <option value="">Select a specialist</option>
+                                        <option value="generalmedicin">General Medicine</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="dermatology">Dermatology</option>
+                                        <option value="psychiatry">Psychiatry</option>
+                                    </select>
+                                </div>
+                                <Button aria-label="Make an appointment" type="submit" className="btn-primary">
+                                    Make an appointment
+                                </Button>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>
@@ -92,4 +159,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
