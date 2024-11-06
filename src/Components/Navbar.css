@@ -1,35 +1,3 @@
-@keyframes openMenu {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes closeMenu {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-
-.navbar.show {
-    display: flex;
-    animation: openMenu 0.2s ease forwards; /* Justera hastigheten med 0.5s */
-}
-
-.navbar.hide {
-    animation: closeMenu 0.2s ease forwards;
-}
-
 .main-nav {
     padding-block: 1rem;
     position: absolute;

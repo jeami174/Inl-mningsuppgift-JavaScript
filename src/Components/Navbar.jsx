@@ -1,4 +1,3 @@
-// Navbar.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MobileButton from './MobileButton';
@@ -32,6 +31,8 @@ const Navbar = () => {
         } else {
             setBgColor('transparent'); 
         }
+
+        setIsMenuOpen(false);
     }, [location.pathname]);
 
     return (
@@ -73,3 +74,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
