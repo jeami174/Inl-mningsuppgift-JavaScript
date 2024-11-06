@@ -58,35 +58,32 @@
 }
 
 .informationbox {
-    background-color: #e0ffe0; /* Ljuskgrön bakgrund för att indikera framgång */
-    border: 1px solid #4CAF50; /* Grön kant */
+    border: 1px solid;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
     margin-top: 20px;
 }
 
-.informationbox h3 {
-    color: #4CAF50; /* Grön text för rubriken */
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.informationbox.success {
+    background-color: #e0ffe0;
+    border-color: #4CAF50;
+    color: #4CAF50;
 }
 
-.informationbox p {
-    color: #333; /* Mörk text för meddelandet */
-    font-size: 1em;
-    margin-bottom: 20px;
+.informationbox.error {
+    background-color: #ffe0e0;
+    border-color: #f44336;
+    color: #f44336;
 }
 
 .informationbox .btn-primary {
-    background-color: #4CAF50; /* Grön bakgrund för knappen */
-    color: white;
+    margin-top: 15px;
+    background-color: inherit;
     border: none;
-    padding: 10px 20px;
     font-size: 1em;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 8px 15px;
 }
 
 .informationbox .btn-primary:hover {

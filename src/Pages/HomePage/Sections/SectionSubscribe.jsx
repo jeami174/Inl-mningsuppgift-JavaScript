@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { MessageContext } from '../../../Contexts/MessageContext';
 import Button from '../../../Components/Button';
 import notificationIcon from '../../../Images/notification-icon.svg';
 import letterIcon from '../../../Images/letter.svg';
 import './SectionSubscribe.css';
 
 const SectionSubscribe = () => {
-
     const [formData, setFormData] = useState({ email: '' });
     const [submitted, setSubmitted] = useState(false);
-    const [error, setError] = useState(null);
+    const { message, messageType, showMessage, clearMessage } = useContext(MessageContext);
 
     const handleChange = (event) => {
         setFormData({
@@ -19,7 +19,7 @@ const SectionSubscribe = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setError(null);
+        clearMessage();
 
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
@@ -31,21 +31,21 @@ const SectionSubscribe = () => {
                 body: JSON.stringify(formData)
             });
 
-            console.log(res);
-
             if (res.ok) {
+                showMessage('success', 'Tack för ditt meddelande. Vi återkommer till dig så snart vi kan.');
                 setSubmitted(true);
-                setFormData({ email: '' }); 
+                setFormData({ email: '' });
             } else {
-                setError('Något gick fel, försök igen.');
+                showMessage('error', 'Något gick fel, försök igen.');
             }
         } catch (error) {
-            setError('Något gick fel, försök igen.');
+            showMessage('error', 'Något gick fel, försök igen.');
         }
     };
 
     const handleOkClick = () => {
         setSubmitted(false);
+        clearMessage();
     };
 
     return (
@@ -63,10 +63,10 @@ const SectionSubscribe = () => {
                             <h2>Subscribe to our newsletter</h2>
                         </div>
                     </div>
-                    {submitted ? (
-                        <div className="informationbox">
-                            <h3>Tack för ditt meddelande</h3>
-                            <p>Vi återkommer till dig så snart vi kan.</p>
+                    {message ? (
+                        <div className={`informationbox ${messageType}`}>
+                            <h3>{messageType === 'success' ? 'Tack för ditt meddelande' : 'Felmeddelande'}</h3>
+                            <p>{message}</p>
                             <button className="btn-primary" onClick={handleOkClick}>OK</button>
                         </div>
                     ) : (
@@ -82,7 +82,6 @@ const SectionSubscribe = () => {
                                 onChange={handleChange}
                             />
                             <Button type="submit">Subscribe</Button>
-                            {error && <p className="error-message">{error}</p>}
                         </form>
                     )}
                 </div>
