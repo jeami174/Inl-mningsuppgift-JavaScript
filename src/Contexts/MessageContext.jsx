@@ -1,4 +1,7 @@
+// MessageContext.js
 import React, { createContext, useState } from 'react';
+import '../Components/MessageBox.css';
+
 
 export const MessageContext = createContext();
 

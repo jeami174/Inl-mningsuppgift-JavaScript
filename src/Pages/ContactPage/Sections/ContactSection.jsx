@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { MessageContext } from '../../../Contexts/MessageContext';
+import { MessageContext } from '../../../Contexts/MessageContext.jsx';
 import Button from '../../../Components/Button';
 import './ContactSection.css';
 import InfoBox from '../../../Components/InfoBox';
@@ -15,7 +15,7 @@ const Contact = () => {
         specialist: ''
     });
 
-    
+    // Hanterar förändringar i formuläret
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prevData) => ({
@@ -24,6 +24,7 @@ const Contact = () => {
         }));
     };
 
+    // Hantera formulärinlämning
     const handleSubmit = async (event) => {
         event.preventDefault();
         clearMessage();
@@ -49,6 +50,7 @@ const Contact = () => {
         }
     };
 
+    // Info om kontaktalternativ
     const features = [
         {
             id: "info-1",
