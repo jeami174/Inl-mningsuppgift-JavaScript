@@ -9,10 +9,9 @@ import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
 
 const FAQSection = () => {
-    const [faqs, setFaqs] = useState([]); // State för att lagra FAQ-data
-    const [openIndex, setOpenIndex] = useState(null); // State för att spåra öppen accordion
+    const [faqs, setFaqs] = useState([]);
+    const [openIndex, setOpenIndex] = useState(null);
 
-    // Asynkron funktion för att hämta data från API:t
     const fetchData = async () => {
         try {
             const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
@@ -27,7 +26,6 @@ const FAQSection = () => {
         }
     };
 
-    // Körs när komponenten laddas första gången
     useEffect(() => {
         fetchData();
     }, []);

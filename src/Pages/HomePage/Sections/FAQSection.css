@@ -67,7 +67,7 @@ margin-top: 3rem;
 #section-faq .contact-card .phone .btn-contact-phone,
 #section-faq .contact-card .text .btn-contact-text {
     display: flex;
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
     font-size: 0.9rem;
     font-weight: 600;
     padding: 0;

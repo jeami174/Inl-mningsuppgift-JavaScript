@@ -1,3 +1,26 @@
+#container-1 {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto; 
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    #container-1 {
+        max-width: 720px; /* Begränsa bredden till 720px */
+    }
+}
+
+@media (min-width: 1400px) {
+    #container-1 {
+        max-width: 1320px;
+    }
+}
+
 .main-nav {
     padding-block: 1rem;
     position: absolute;
@@ -5,39 +28,26 @@
     top: 0;
 }
 
-#container-1 {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto; /* En kolumn för loggan och tre för innehåll */
-    gap: 1.5rem;
-    align-items: center;
-    max-width: 100%;
-    margin: 0;
-    padding-top: 0.5rem;
-}
-
 #logo {
     display: flex;
     z-index: 1001;
 }
 
-
 .navbar {
     display: none;
 }
-
 
 .btn-mobile {
     display: block;
     background-color: transparent;
     border: 0;
-    padding-block: 0.5rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
     cursor: pointer;
     position: absolute;
     right: 1rem;
     z-index: 9999;
 }
-
 
 .nav-link {
     color: var(--color-navigation);
@@ -50,8 +60,6 @@
     color: var(--color-primary);
     text-decoration: underline;
 }
-
-
 
 .navbar.show {
     position: absolute;
@@ -73,7 +81,6 @@
     animation: closeMenu 0.5s ease forwards;
 }
 
-
 @media (min-width: 992px) {
     .navbar {
         display: flex;
@@ -93,7 +100,6 @@
         right: 1rem;
     }
 
-
     #container-1 {
         grid-template-columns: auto 1fr; 
     }
@@ -102,5 +108,4 @@
         margin-left: 0;
         padding: 0.5rem 1rem;
     }
-
 }

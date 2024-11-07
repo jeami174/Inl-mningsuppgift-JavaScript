@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { MessageContext } from '../../../Contexts/MessageContext.jsx';
 import Button from '../../../Components/Button';
 import './ContactSection.css';
-import InfoBox from '../../../Components/InfoBox';
+import InfoBoxRound from '../../../Components/InfoBoxRound'; // Ändrat till InfoBoxRound
 import LetterIcon from '../../../Images/icons/Vector.svg';
 import AddIcon from '../../../Images/icons/add-group.svg';
 
@@ -15,7 +15,6 @@ const Contact = () => {
         specialist: ''
     });
 
-    // Hanterar förändringar i formuläret
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prevData) => ({
@@ -24,7 +23,6 @@ const Contact = () => {
         }));
     };
 
-    // Hantera formulärinlämning
     const handleSubmit = async (event) => {
         event.preventDefault();
         clearMessage();
@@ -50,15 +48,12 @@ const Contact = () => {
         }
     };
 
-    // Info om kontaktalternativ
     const features = [
         {
             id: "info-1",
             icon: LetterIcon,
             title: "Email us",
             description: "Please feel free to drop us a line. We will respond as soon as possible.",
-            iconBackgroundColor: '#FFF', 
-            iconBorderRadius: '50%', 
             showButton: true,
             buttonText: 'Leave a message'
         },
@@ -67,8 +62,6 @@ const Contact = () => {
             icon: AddIcon,
             title: "Careers",
             description: "Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.",
-            iconBackgroundColor: '#FFF',
-            iconBorderRadius: '50%',
             showButton: true,
             buttonText: 'Send an application'
         }
@@ -83,13 +76,11 @@ const Contact = () => {
                     </div>
                     <div className="container-info">
                         {features.map((feature) => (
-                            <InfoBox
+                            <InfoBoxRound
                                 key={feature.id}
                                 icon={feature.icon}
                                 title={feature.title}
                                 description={feature.description}
-                                iconBackgroundColor={feature.iconBackgroundColor}
-                                iconBorderRadius={feature.iconBorderRadius}
                                 showButton={feature.showButton}
                                 buttonText={feature.buttonText}
                             />

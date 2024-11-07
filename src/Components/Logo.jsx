@@ -1,4 +1,3 @@
-// Logo.jsx
 import React from 'react';
 
 const Logo = ({ isDarkMode, lightSrc, darkSrc, altText = 'Logotype' }) => {

@@ -6,16 +6,20 @@
     align-items: start;
 }
 
-.info-icon {
+.info-icon-round {
     grid-column: 1;
     grid-row: 1 / span 2;
     padding: 15px;
-    border-radius: 8px;
-    background-color: var(--color-icon-bg);
+    border-radius: 50%;
+    background-color: var(--color-bg);
 }
 
+/* Dark mode-styling */
+.dark .info-icon-round {
+    background-color: rgba(99, 101, 241, 0.08);
+}
 
-.info-icon img {
+.info-icon-round img {
     display: block;
     width: auto;
     height: auto;
