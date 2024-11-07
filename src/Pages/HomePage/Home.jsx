@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import HeroSection from "./Sections/HeroSection";
 import HowDoesItWork from "./Sections/HowDoesItWorkSection";
 import AppFeaturesSection from "./Sections/AppFeaturesSection";
@@ -9,6 +10,17 @@ import SectionSubscribe from "./Sections/SectionSubscribe";
 import FAQSection from "./Sections/FAQSection";
 
 const Home = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.scrollToFeatures) {
+            const featuresSection = document.getElementById('section-appfeatures');
+            if (featuresSection) {
+                featuresSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [location.state]);
+
     return (
         <>
             <HeroSection />
@@ -20,7 +32,7 @@ const Home = () => {
             <FAQSection />
             <SectionSubscribe />
         </>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

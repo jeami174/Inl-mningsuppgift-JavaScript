@@ -52,7 +52,7 @@ function AppFeaturesSection() {
     ];
 
     return (
-        <section aria-label="section-appfeatures" className="section-appfeatures">
+        <section aria-label="section-appfeatures" className="section-appfeatures" id="section-appfeatures">
             <div className="container">
                 <div className="h2">
                     <h2>App Features</h2>
@@ -80,4 +80,3 @@ function AppFeaturesSection() {
 }
 
 export default AppFeaturesSection;
-

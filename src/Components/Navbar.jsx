@@ -23,6 +23,21 @@ const Navbar = () => {
         navigate('/');
     };
 
+    const scrollToFeaturesSection = (event) => {
+        event.preventDefault();
+        if (location.pathname === '/') {
+            // Om vi redan är på startsidan, scrolla direkt till AppFeaturesSection
+            const featuresSection = document.getElementById('section-appfeatures');
+            if (featuresSection) {
+                featuresSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Om vi är på en annan sida, navigera till startsidan med state för att scrolla till AppFeaturesSection
+            navigate('/', { state: { scrollToFeatures: true } });
+        }
+        setIsMenuOpen(false); // Stäng menyn om den är öppen
+    };
+
     useEffect(() => {
         if (location.pathname === '/') {
             setBgColor('var(--color-bg)'); 
@@ -47,7 +62,8 @@ const Navbar = () => {
                     className={`navbar ${isMenuOpen ? 'show' : 'hide'}`}
                     aria-label="main navigation"
                 >
-                    <NavLink className="nav-link" to="/">Features</NavLink>
+                    {/* Uppdaterad länkhändelse för att rulla till AppFeaturesSection */}
+                    <NavLink className="nav-link" to="/" onClick={scrollToFeaturesSection}>Features</NavLink>
                     <NavLink className="nav-link" to="/Contact">Contact</NavLink>
                     <Button 
                         id="auth-signin" 
@@ -74,4 +90,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

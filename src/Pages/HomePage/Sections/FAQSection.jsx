@@ -1,4 +1,3 @@
-// FAQSection.jsx
 import React, { useState, useEffect } from 'react';
 import Accordion from '../../../Components/Accordion';
 import Button from '../../../Components/Button';
@@ -7,7 +6,7 @@ import contactTextIcon from '../../../Images/icons/contactstext.svg';
 import arrowRightPurple from '../../../Images/icons/arrowrightpurple.svg';
 import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
-import React, { useRef } from 'react';
+
 
 const FAQSection = () => {
     const [faqs, setFaqs] = useState([]);
