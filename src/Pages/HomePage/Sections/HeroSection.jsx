@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeroSection.css';
 import CircleButton from '../../../Components/CircleButton'; 
-import Button from '../../../Components/Button'; // Importera Button
+import Button from '../../../Components/Button';
 import appStoreLight from '../../../Images/appstorelight.svg';
 import appStoreDark from '../../../Images/icons/Appstoredark.svg';
 import googlePlayLight from '../../../Images/googleplaylight.svg';
@@ -23,16 +23,16 @@ const HeroSection = () => {
                             href="https://www.apple.com/se/app-store/"
                             variant="secondary"
                             aria-label="Click here to download in app-store"
-                            icon={appStoreLight} // Dynamiskt ljus ikon
                         >
+                            <img className="show-light" src={appStoreLight} alt="appstore icon light" />
                             <img className="show-dark" src={appStoreDark} alt="appstore icon dark" />
                         </Button>
                         <Button
                             href="https://play.google.com/store/apps"
                             variant="secondary"
                             aria-label="Click here to download in google play"
-                            icon={googlePlayLight} // Dynamiskt ljus ikon
                         >
+                            <img className="show-light" src={googlePlayLight} alt="googleplay icon light" />
                             <img className="show-dark" src={googlePlayDark} alt="googleplay icon dark" />
                         </Button>
                     </div>
@@ -61,6 +61,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 
 
