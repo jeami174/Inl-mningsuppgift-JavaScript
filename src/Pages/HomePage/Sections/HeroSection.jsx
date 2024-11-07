@@ -32,11 +32,11 @@ const HeroSection = () => {
                             variant="secondary"
                             aria-label="Click here to download in google play"
                         >
-                            <img className="show-light" src={googlePlayLight} alt="googleplay icon light" />
-                            <img className="show-dark" src={googlePlayDark} alt="googleplay icon dark" />
+                            <img className="show-light" src={googlePlayLight} alt="appstore icon light" />
+                            <img className="show-dark" src={googlePlayDark} alt="appstore icon dark" />
                         </Button>
                     </div>
-                    <a className="discover-more" href="#features">
+                    <a href="#section-faq" className="discover-more">
                         <CircleButton ariaLabel="Discover more">
                             <i className="fa-solid fa-chevron-down"></i>
                         </CircleButton>
@@ -61,7 +61,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
 
 
 

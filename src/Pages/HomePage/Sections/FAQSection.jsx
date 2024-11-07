@@ -7,6 +7,7 @@ import contactTextIcon from '../../../Images/icons/contactstext.svg';
 import arrowRightPurple from '../../../Images/icons/arrowrightpurple.svg';
 import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
+import React, { useRef } from 'react';
 
 const FAQSection = () => {
     const [faqs, setFaqs] = useState([]);

@@ -9,6 +9,8 @@
     position: relative;
 }
 
+
+
 @media (min-width: 768px) {
     #container-1 {
         max-width: 720px; /* Begränsa bredden till 720px */
@@ -68,12 +70,11 @@
     justify-content: center;
     align-items: center;
     padding-top: 15rem;
+    padding-bottom: 2rem;
     box-shadow: 0 5px 5px #B4B7C9;
     background-color: var(--color-bg);
-    height: 60%;
     width: 100%;
     z-index: 1000;
-    right: 0;
     animation: openMenu 0.5s ease forwards;
 }
 

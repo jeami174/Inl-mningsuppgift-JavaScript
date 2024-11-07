@@ -17,7 +17,7 @@ const Breadcrumb = () => {
                 <ul>
                     <li>
                         <Link to="/">
-                            <img src={homeIcon} alt="Home Icon" className="home-icon" /> Home
+                            <img src={homeIcon} alt="Home Icon" className="home-icon" /> Homepage
                         </Link>
                     </li>
                     {pathnames.map((name, index) => {
