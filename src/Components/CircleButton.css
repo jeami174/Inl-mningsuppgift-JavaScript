@@ -1,5 +1,4 @@
 
-/* CircleButton.css */
 .btn-cirkel {
     height: 44px;
     width: 44px;
@@ -9,14 +8,14 @@
     border-radius: 50%;
     background-color: var(--color-white-to-gray);
     color: var(--color-navigation);
-    border: none; /* Tar bort eventuell kantlinje */
-    outline: none; /* Förhindrar extra ram vid fokus */
+    border: none; 
+    outline: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .btn-cirkel:hover,
 .btn-cirkel:focus-visible {
-    background-color: hsl(240, 100%, 85%); /* Ställ in statisk hover-färg */
+    background-color: hsl(240, 100%, 85%);
 }
 

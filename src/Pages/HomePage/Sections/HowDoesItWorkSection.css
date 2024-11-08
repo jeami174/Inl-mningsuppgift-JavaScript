@@ -34,7 +34,6 @@
     margin-bottom: 1rem;
 }
 
-/* Tablet-specific styles */
 @media (min-width: 768px) {
     .section-how-does-it-work .workmobile {
         display: none;
@@ -79,7 +78,6 @@
     }
 }
 
-/* Desktop-specific styles */
 @media (min-width: 1400px) {
     .section-how-does-it-work .worktablet {
         display: none;

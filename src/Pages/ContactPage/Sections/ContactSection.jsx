@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { MessageContext } from '../../../Contexts/MessageContext.jsx';
 import Button from '../../../Components/Button';
 import './ContactSection.css';
-import InfoBoxRound from '../../../Components/InfoBoxRound'; // Ändrat till InfoBoxRound
+import InfoBoxRound from '../../../Components/InfoBoxRound';
 import LetterIcon from '../../../Images/icons/Vector.svg';
 import AddIcon from '../../../Images/icons/add-group.svg';
 

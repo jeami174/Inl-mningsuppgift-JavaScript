@@ -2,16 +2,10 @@ import React from 'react';
 import './InfoBox.css';
 import arrowRightPurple from '../Images/icons/arrowrightpurple.svg';
 
-const InfoBox = ({ icon, title, description, iconBackgroundColor, iconBorderRadius, showButton, buttonText }) => {
+const InfoBox = ({ icon, title, description, showButton, buttonText }) => {
     return (
         <div className="info-box">
-            <div
-                className="info-icon"
-                style={{
-                    backgroundColor: iconBackgroundColor || 'var(--coiconlor--bg)',
-                    borderRadius: iconBorderRadius || '8px'
-                }}
-            >
+            <div className="info-icon">
                 <img src={icon} alt={`${title} icon`} />
             </div>
             <h3>{title}</h3>
@@ -27,6 +21,7 @@ const InfoBox = ({ icon, title, description, iconBackgroundColor, iconBorderRadi
 };
 
 export default InfoBox;
+
 
 
 

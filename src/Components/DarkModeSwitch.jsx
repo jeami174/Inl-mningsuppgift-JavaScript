@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ToggleButton from './ToggleButton';
-import './DarkModeSwitch.css'; // Importera CSS för DarkModeSwitch
+import './DarkModeSwitch.css';
 
 const DarkModeSwitch = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);

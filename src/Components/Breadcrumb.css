@@ -33,8 +33,8 @@
 }
 
 .home-icon {
-    width: 16px; /* Sätt storlek på ikonen */
+    width: 16px;
     height: 16px;
-    margin-right: 4px; /* Skapa lite mellanrum mellan ikonen och texten */
-    vertical-align: middle; /* Justera vertikalt för säkerhets skull */
+    margin-right: 4px; 
+    vertical-align: middle;
 }

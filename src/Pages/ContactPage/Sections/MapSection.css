@@ -19,7 +19,7 @@
 
 .MapSection .infolist {
     list-style: none;
-    padding-left: 2rem; /* Samma värde som rubrikens padding */
+    padding-left: 2rem;
     margin: 0;
 }
 

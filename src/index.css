@@ -67,7 +67,7 @@
 *::before,
 *::after{
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) ; /* Stänger av higlight vid tap */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) ;
 }
 
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {
@@ -122,8 +122,6 @@ h1, h2, h3, h4, h5, h6 {
 ol, ul {
     list-style: none;
 }
-
-/* UTILITY CLASSES */
 
 .container {
     max-width: 100%;

@@ -124,7 +124,7 @@ padding-bottom: 2rem;
 
     .ContactSection .cardcontact {
         position: relative;
-        margin-bottom: -15rem; /* Justera detta värde för att kontrollera hur mycket kortet sträcker sig över nästa sektion */
+        margin-bottom: -15rem;
         z-index: 2; 
     }
 }

@@ -1,4 +1,3 @@
-// SectionClients.jsx
 import React, { useState, useEffect } from 'react';
 import './SectionClients.css';
 import quoteIcon from '../../../Images/icons/iconquote.svg';

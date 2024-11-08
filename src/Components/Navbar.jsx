@@ -26,18 +26,19 @@ const Navbar = () => {
     const scrollToFeaturesSection = (event) => {
         event.preventDefault();
         if (location.pathname === '/') {
-            // Om vi redan är på startsidan, scrolla direkt till AppFeaturesSection
+            // If on the homepage, scroll directly to the AppFeaturesSection
             const featuresSection = document.getElementById('section-appfeatures');
             if (featuresSection) {
                 featuresSection.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // Om vi är på en annan sida, navigera till startsidan med state för att scrolla till AppFeaturesSection
+            // If on a different page, navigate to the homepage and then scroll to the AppFeaturesSection
             navigate('/', { state: { scrollToFeatures: true } });
         }
-        setIsMenuOpen(false); // Stäng menyn om den är öppen
+        setIsMenuOpen(false); // Close the menu after the user has made a selection
     };
 
+    // Function to change the navbar's background color depending on the current page
     useEffect(() => {
         if (location.pathname === '/') {
             setBgColor('var(--color-bg)'); 
@@ -47,29 +48,28 @@ const Navbar = () => {
             setBgColor('transparent'); 
         }
 
-        setIsMenuOpen(false);
+        setIsMenuOpen(false); // Ensure the menu is closed when navigating between pages
     }, [location.pathname]);
 
     return (
         <header style={{ backgroundColor: bgColor }}>
             <div id="container-1" className="container nav">
-                <Link id="logo" to="/" aria-label="To Mainpage">
+                <Link id="logo" to="/" aria-label="Navigate to the homepage">
                     <img className="show-light" src={Logotype} alt="Silicon Logotype" />
                     <img className="show-dark" src={Logotypedark} alt="Silicon Logotype Dark" />
                 </Link>
                 <nav
                     id="main-menu"
                     className={`navbar ${isMenuOpen ? 'show' : 'hide'}`}
-                    aria-label="main navigation"
+                    aria-label="Main navigation"
                 >
-                    {/* Uppdaterad länkhändelse för att rulla till AppFeaturesSection */}
                     <NavLink className="nav-link" to="/" onClick={scrollToFeaturesSection}>Features</NavLink>
                     <NavLink className="nav-link" to="/Contact">Contact</NavLink>
                     <Button 
                         id="auth-signin" 
                         variant="primary"
                         className="btn-primary" 
-                        aria-label="Sign in or up"
+                        aria-label="Sign in or sign up"
                         icon={UserIcon}
                         onClick={handleButtonClick}
                     >
