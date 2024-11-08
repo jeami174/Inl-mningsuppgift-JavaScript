@@ -113,8 +113,6 @@ padding-bottom: 2rem;
     margin-top: 7rem;
 }
 
-
-/* Tablet media query */
 @media (min-width: 768px) {
 
     .ContactSection .container-info {

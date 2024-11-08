@@ -10,10 +10,6 @@ const SectionClients = () => {
     const fetchData = async () => {
         try {
             const response = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials');
-            const contentType = response.headers.get("content-type");
-            if (!contentType || !contentType.includes("application/json")) {
-                throw new Error("Response is not JSON");
-            }
             const data = await response.json();
             setTestimonials(data);
         } catch (error) {
