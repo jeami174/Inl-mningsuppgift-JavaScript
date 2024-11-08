@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './SectionClients.css';
 import quoteIcon from '../../../Images/icons/iconquote.svg';
-import starIcon from '../../../Images/icons/rating4stars.svg';
-import './SectionClients.css';
+import starIcon from '../../../Images/icons/star.svg'; // Fylld stjärna
+import starBlankIcon from '../../../Images/icons/starblank.svg'; // Tom stjärna
 
 const SectionClients = () => {
     const [testimonials, setTestimonials] = useState([]);
@@ -26,9 +26,18 @@ const SectionClients = () => {
     }, []);
 
     const renderStars = (rating) => {
-        return Array.from({ length: rating }, (_, index) => (
-            <img key={index} src={starIcon} alt="star" className="star-icon" />
-        ));
+        return (
+            <div className="stars">
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <img 
+                        key={index} 
+                        src={index < rating ? starIcon : starBlankIcon} 
+                        alt={index < rating ? "filled star" : "empty star"} 
+                        className="star-icon" 
+                    />
+                ))}
+            </div>
+        );
     };
 
     return (
