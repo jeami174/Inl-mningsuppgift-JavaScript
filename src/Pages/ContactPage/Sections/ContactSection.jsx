@@ -38,13 +38,13 @@ const Contact = () => {
             });
 
             if (res.ok) {
-                showMessage('success', 'Tack för ditt meddelande. Vi återkommer till dig så snart vi kan.');
+                showMessage('success', 'We will get back to you as soon as we can');
                 setFormData({ fullName: '', email: '', specialist: '' });
             } else {
-                showMessage('error', 'Något gick fel, försök igen.');
+                showMessage('error', 'Something went wrong, please try again.');
             }
         } catch (error) {
-            showMessage('error', 'Något gick fel, försök igen.');
+            showMessage('error', 'Something went wrong, please try again.');
         }
     };
 
@@ -92,7 +92,7 @@ const Contact = () => {
                         </div>
                         {message ? (
                             <div className={`informationbox ${messageType}`}>
-                                <h3>{messageType === 'success' ? 'Tack för ditt meddelande' : 'Felmeddelande'}</h3>
+                                <h3>{messageType === 'success' ? 'Thank you for your message. ' : 'Something went wrong'}</h3>
                                 <p>{message}</p>
                                 <button className="btn-primary" onClick={clearMessage}>OK</button>
                             </div>

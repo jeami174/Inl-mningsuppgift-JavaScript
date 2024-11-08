@@ -32,14 +32,14 @@ const SectionSubscribe = () => {
             });
 
             if (res.ok) {
-                showMessage('success', 'Tack för ditt meddelande. Vi återkommer till dig så snart vi kan.');
+                showMessage('success', 'You are now subscribed to our newsletter');
                 setSubmitted(true);
                 setFormData({ email: '' });
             } else {
-                showMessage('error', 'Något gick fel, försök igen.');
+                showMessage('error', 'Something went wrong, please try again.');
             }
         } catch (error) {
-            showMessage('error', 'Något gick fel, försök igen.');
+            showMessage('error', 'Something went wrong, please try again.');
         }
     };
 
@@ -65,7 +65,7 @@ const SectionSubscribe = () => {
                     </div>
                     {message ? (
                         <div className={`informationbox ${messageType}`}>
-                            <h3>{messageType === 'success' ? 'Tack för ditt meddelande' : 'Felmeddelande'}</h3>
+                            <h3>{messageType === 'success' ? 'Yay!' : 'Error'}</h3>
                             <p>{message}</p>
                             <button className="btn-primary" onClick={handleOkClick}>OK</button>
                         </div>
