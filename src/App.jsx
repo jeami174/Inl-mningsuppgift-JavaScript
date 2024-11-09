@@ -5,24 +5,27 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { MessageProvider } from "./Contexts/MessageContext";
 import Breadcrumb from "./Components/Breadcrumb";
+import { ValidationProvider } from "./Contexts/ValidationContext";
 
 const App = () => {
     return (
-        <MessageProvider>
-            <BrowserRouter>
-                <>
-                    <Header />
-                    <Breadcrumb />
-                    <main>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/Contact" element={<Contact/>}/>
-                    </Routes>
-                    </main>
-                    <Footer />
-                </>
-            </BrowserRouter>
-        </MessageProvider>
+        <ValidationProvider>
+            <MessageProvider>
+                <BrowserRouter>
+                    <>
+                        <Header />
+                        <Breadcrumb />
+                        <main>
+                        <Routes>
+                            <Route path="/" element={<Home/>}/>
+                            <Route path="/Contact" element={<Contact/>}/>
+                        </Routes>
+                        </main>
+                        <Footer />
+                    </>
+                </BrowserRouter>
+            </MessageProvider>
+        </ValidationProvider>
     );
 };
 

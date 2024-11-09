@@ -12,15 +12,20 @@ import FAQSection from "./Sections/FAQSection";
 const Home = () => {
     const location = useLocation();
 
+
+    // Check if `scrollToFeatures` is set in location.state
+    // And if the element exists, smoothly scroll it into view
+
     useEffect(() => {
-        if (location.state?.scrollToFeatures) {
+        if (location?.state?.scrollToFeatures) {
             const featuresSection = document.getElementById('section-appfeatures');
             if (featuresSection) {
                 featuresSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
-    }, [location.state]);
-
+    }, [location?.state?.scrollToFeatures]);
+    
+    
     return (
         <>
             <HeroSection />

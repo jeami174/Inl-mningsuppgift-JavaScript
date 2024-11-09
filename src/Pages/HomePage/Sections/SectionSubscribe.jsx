@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import { MessageContext } from '../../../Contexts/MessageContext';
+import { useValidation } from '../../../Contexts/ValidationContext';
 import Button from '../../../Components/Button';
 import notificationIcon from '../../../Images/notification-icon.svg';
 import letterIcon from '../../../Images/letter.svg';
@@ -7,19 +8,24 @@ import './SectionSubscribe.css';
 
 const SectionSubscribe = () => {
     const [formData, setFormData] = useState({ email: '' });
-    const [submitted, setSubmitted] = useState(false);
     const { message, messageType, showMessage, clearMessage } = useContext(MessageContext);
+    const { validateEmail } = useValidation();
 
-    const handleChange = (event) => {
-        setFormData({
-            ...formData,
+    const handleChange = useCallback((event) => {
+        setFormData(prevFormData => ({
+            ...prevFormData,
             [event.target.name]: event.target.value
-        });
-    };
+        }));
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         clearMessage();
+
+        if (!validateEmail(formData.email)) {
+            showMessage('error', 'Please enter a valid email address.');
+            return;
+        }
 
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
@@ -33,7 +39,6 @@ const SectionSubscribe = () => {
 
             if (res.ok) {
                 showMessage('success', 'You are now subscribed to our newsletter');
-                setSubmitted(true);
                 setFormData({ email: '' });
             } else {
                 showMessage('error', 'Something went wrong, please try again.');
@@ -43,10 +48,9 @@ const SectionSubscribe = () => {
         }
     };
 
-    const handleOkClick = () => {
-        setSubmitted(false);
+    const handleOkClick = useCallback(() => {
         clearMessage();
-    };
+    }, [clearMessage]);
 
     return (
         <section id="section-subscribe">
@@ -91,6 +95,7 @@ const SectionSubscribe = () => {
 };
 
 export default SectionSubscribe;
+
 
 
 
