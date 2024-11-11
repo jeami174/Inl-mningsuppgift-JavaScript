@@ -10,24 +10,24 @@ import receivePaymentsImage from '../../../Images/receive-payments.svg';
 import './SectionInfo.css';
 
 const SectionInfo = () => {
+    const infoItems = [
+        "Banking transactions are free for you",
+        "No monthly cash commission",
+        "Manage payments and transactions online"
+    ];
+
     return (
         <section aria-label="section-info" id="section-info">
             <div className="container">
                 <div className="content1">
                     <h2>Make your money transfer simple and clear</h2>
                     <ul className="infolist">
-                        <li>
-                            <img src={checkCircleIcon} alt="check icon" className="checkicon" />
-                            <p>Banking transactions are free for you</p>
-                        </li>
-                        <li>
-                            <img src={checkCircleIcon} alt="check icon" className="checkicon" />
-                            <p>No monthly cash commission</p>
-                        </li>
-                        <li>
-                            <img src={checkCircleIcon} alt="check icon" className="checkicon" />
-                            <p>Manage payments and transactions online</p>
-                        </li>
+                        {infoItems.map((item, index) => (
+                            <li key={index}>
+                                <img src={checkCircleIcon} alt="check icon" className="checkicon" />
+                                <p>{item}</p>
+                            </li>
+                        ))}
                     </ul>
                     <Button aria-label="Learn more">
                         <span>Learn more</span>
@@ -65,5 +65,6 @@ const SectionInfo = () => {
 };
 
 export default SectionInfo;
+
 
 

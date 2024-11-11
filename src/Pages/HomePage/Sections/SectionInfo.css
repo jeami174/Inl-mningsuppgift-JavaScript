@@ -2,39 +2,6 @@
     display: none;
 }
 
-.informationbox {
-    border: 1px solid;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.informationbox.success {
-    background-color: #e0ffe0;
-    border-color: #4CAF50;
-    color: #4CAF50;
-}
-
-.informationbox.error {
-    background-color: #ffe0e0;
-    border-color: #f44336;
-    color: #f44336;
-}
-
-.informationbox .btn-primary {
-    margin-top: 15px;
-    background-color: inherit;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    padding: 8px 15px;
-}
-
-.informationbox .btn-primary:hover {
-    background-color: #45a049; /* Mörkare grön vid hover */
-}
-
 @media (min-width: 1400px) { 
 
     #section-info {

@@ -31,7 +31,7 @@ const MapSection = () => {
                         </li>
                         <li>
                             <img src={clockIcon} alt="clock icon" className="checkicon" />
-                            <p><span className='strong'>Mon – Fri:</span> 9:00 am – 22:00 am <br/> <span className='strong'>Sat – Sun:</span> 9:00 am – 20:00 am</p>
+                            <p><span className='strong'>Mon – Fri:</span> 9:00 am – 22:00 pm <br/> <span className='strong'>Sat – Sun:</span> 9:00 am – 20:00 pm</p>
                         </li>
                     </ul>
                 </div>
@@ -48,7 +48,7 @@ const MapSection = () => {
                         </li>
                         <li>
                             <img src={clockIcon} alt="clock icon" className="checkicon" />
-                            <p><span className='strong'>Mon – Fri:</span> 9:00 am – 22:00 am <br/> <span className='strong'>Sat – Sun:</span> 9:00 am – 20:00 am</p>
+                            <p><span className='strong'>Mon – Fri:</span> 9:00 am – 22:00 pm <br/> <span className='strong'>Sat – Sun:</span> 9:00 am – 20:00 pm</p>
                         </li>
                     </ul>
                 </div>

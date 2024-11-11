@@ -10,31 +10,43 @@ import iPhoneBehind from '../../../Images/iPhonebehind-desktop.svg';
 import groupImage from '../../../Images/Group (1).svg';
 
 const HeroSection = () => {
+    const storeButtons = [
+        {
+            href: "https://www.apple.com/se/app-store/",
+            lightIcon: appStoreLight,
+            darkIcon: appStoreDark,
+            alt: "appstore icon",
+            ariaLabel: "Click here to download in app-store"
+        },
+        {
+            href: "https://play.google.com/store/apps",
+            lightIcon: googlePlayLight,
+            darkIcon: googlePlayDark,
+            alt: "google play icon",
+            ariaLabel: "Click here to download in google play"
+        }
+    ];
+
     return (
         <section aria-label="section-hero" id="section-hero">
             <div className="container">
-                <div className="h1">
+                <header className="h1">
                     <h1>Manage All Your Money in One App</h1>
-                </div>
+                </header>
                 <div className="content">
                     <p>We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
                     <div className="buttons">
-                        <Button
-                            href="https://www.apple.com/se/app-store/"
-                            variant="secondary"
-                            aria-label="Click here to download in app-store"
-                        >
-                            <img className="show-light" src={appStoreLight} alt="appstore icon light" />
-                            <img className="show-dark" src={appStoreDark} alt="appstore icon dark" />
-                        </Button>
-                        <Button
-                            href="https://play.google.com/store/apps"
-                            variant="secondary"
-                            aria-label="Click here to download in google play"
-                        >
-                            <img className="show-light" src={googlePlayLight} alt="appstore icon light" />
-                            <img className="show-dark" src={googlePlayDark} alt="appstore icon dark" />
-                        </Button>
+                        {storeButtons.map((button, index) => (
+                            <Button
+                                key={index}
+                                href={button.href}
+                                variant="secondary"
+                                aria-label={button.ariaLabel}
+                            >
+                                <img className="show-light" src={button.lightIcon} alt={`${button.alt} light`} />
+                                <img className="show-dark" src={button.darkIcon} alt={`${button.alt} dark`} />
+                            </Button>
+                        ))}
                     </div>
                     <a href="#section-faq" className="discover-more">
                         <CircleButton ariaLabel="Discover more">
@@ -61,6 +73,7 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
 
 

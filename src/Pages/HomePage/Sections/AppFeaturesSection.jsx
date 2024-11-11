@@ -1,4 +1,3 @@
-// AppFeaturesSection.jsx
 import React from 'react';
 import creditCardIcon from '../../../Images/credit-card-icon.svg';
 import shieldIcon from '../../../Images/shield-icon.svg';
