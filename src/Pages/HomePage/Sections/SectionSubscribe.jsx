@@ -8,38 +8,51 @@ import './SectionSubscribe.css';
 
 const SectionSubscribe = () => {
     const [formData, setFormData] = useState({ email: '' });
+    const [errors, setErrors] = useState({ email: '' });
     const { message, messageType, showMessage, clearMessage } = useContext(MessageContext);
-    const { validateEmail } = useValidation();
+    const { validationSwitch } = useValidation();
 
-    const handleChange = useCallback((event) => {
-        setFormData(prevFormData => ({
+    const validateForm = () => {
+        const emailError = validationSwitch('email', formData.email);
+        setErrors({ email: emailError });
+        return !emailError;
+    };
+
+    const handleChange = useCallback(({ target: { name, value } }) => {
+        setFormData((prevFormData) => ({
             ...prevFormData,
-            [event.target.name]: event.target.value
+            [name]: value,
         }));
-    }, []);
+
+        const errorMessage = validationSwitch(name, value);
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            [name]: errorMessage,
+        }));
+    }, [validationSwitch]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         clearMessage();
 
-        if (!validateEmail(formData.email)) {
-            showMessage('error', 'Please enter a valid email address.');
-            return;
-        }
+        if (!validateForm()) return;
+
+        const trimmedFormData = { email: formData.email.trim() };
 
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'accept': '*/*'
+                    accept: '*/*',
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(trimmedFormData),
             });
 
             if (res.ok) {
                 showMessage('success', 'You are now subscribed to our newsletter');
                 setFormData({ email: '' });
+                setErrors({ email: '' });
             } else {
                 showMessage('error', 'Something went wrong, please try again.');
             }
@@ -75,19 +88,21 @@ const SectionSubscribe = () => {
                         </div>
                     ) : (
                         <form className="email" onSubmit={handleSubmit} noValidate>
-                            <img className="input-icon" src={letterIcon} alt="letter icon" />
-                            <input 
-                                className="input" 
-                                type="email" 
-                                name="email" 
-                                placeholder="Your email" 
-                                required 
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
-                            <Button type="submit">Subscribe</Button>
+                                    <img className="input-icon" src={letterIcon} alt="letter icon" />
+                                    <input 
+                                        className="input" 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder="Your email" 
+                                        required 
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                    />
+                                <Button type="submit">Subscribe</Button>
+                                {errors.email && <div className="error-message"><p className="error">{errors.email}</p></div>}
                         </form>
                     )}
+                    
                 </div>
             </div>
         </section>
@@ -95,6 +110,9 @@ const SectionSubscribe = () => {
 };
 
 export default SectionSubscribe;
+
+
+
 
 
 

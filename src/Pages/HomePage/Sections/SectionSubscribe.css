@@ -57,6 +57,19 @@
     transform: translateY(-50%);
 }
 
+
+#section-subscribe .error-message {
+    position: absolute;
+    margin-top: 3rem; 
+    width: 100%;
+}
+
+.error {
+    color: var(--color-gray-600);
+    font-size: 0.85em;
+    margin: 0;
+}
+
 @media (min-width: 768px) {
     #section-subscribe .card {
         display: flex;
