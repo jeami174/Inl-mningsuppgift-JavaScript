@@ -47,7 +47,7 @@
 .info-box-button {
     grid-column: 2;
     display: flex;
-    background-color: var(--color-bg-gray);
+    background-color: transparent;
     color: var(--color-primary);
     font-size: 1rem;
     font-weight: 600;

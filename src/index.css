@@ -20,6 +20,7 @@
     --color-bg: var(--color-white);
     --color-bg-gray: var(--color-gray-100);
     --color-bg-card: var(--color-white);
+    --color-bg-card-contact: var(--color-white);
     --color-bg-input: var(--color-white);
 
     --color-text-heading: var(--color-gray-900);
@@ -41,6 +42,7 @@
     --color-bg: var(--color-gray-900);
     --color-bg-gray: rgba(255, 255, 255, 0.04);
     --color-bg-card: rgba(255, 255, 255, 0.04);
+    --color-bg-card-contact: rgb(16, 16, 16);
     --color-bg-input: rgba(255, 255, 255, 0.02);
     --color-white-to-gray: rgba(255, 255, 255, 0.05);
     --color-text-body:  rgba(255, 255, 255, 0.7);
