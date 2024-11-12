@@ -1,0 +1,22 @@
+.socialmedia-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.socialmedia-icon {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--color-icon-bg);
+}
+
+
+.socialmedia-icon img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}

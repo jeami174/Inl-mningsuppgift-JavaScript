@@ -7,11 +7,11 @@ import arrowRightPurple from '../../../Images/icons/arrowrightpurple.svg';
 import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
 
-
 const FAQSection = () => {
     const [faqs, setFaqs] = useState([]);
     const [openIndex, setOpenIndex] = useState(null);
 
+    // Fetches FAQ data from the API provided
     const fetchData = async () => {
         try {
             const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
@@ -67,7 +67,7 @@ const FAQSection = () => {
                     </div>
                 </div>
                 <div className="btn-now">
-                <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>
+                    <Button aria-label="Contact us now" className="btn-primary">Contact us now</Button>
                 </div>
             </div>
         </section>

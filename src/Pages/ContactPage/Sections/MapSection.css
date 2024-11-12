@@ -1,11 +1,11 @@
 .MapSection {
     background-color: var(--color-bg);
     padding-block: 2rem;
-    }
+}
 
-    .MapSection .Adresses {
-        padding-inline: 1rem;
-    }
+.MapSection .Adresses {
+    padding-inline: 1rem;
+}
 
 .MapSection .image {
     display: none;
@@ -28,70 +28,97 @@
     padding-left: 2rem;
 }
 
-    .MapSection .infolist li {
-        display: flex;
-        padding: 0.25rem;
-    }
+.MapSection .infolist li {
+    display: flex;
+    padding: 0.25rem;
+}
 
-    .MapSection .infolist li p {
-        color: var(--color-text-body);
-    }
+.MapSection .infolist li p {
+    color: var(--color-text-body);
+}
 
-    .MapSection .checkicon {
-        width: 20px;
-        height: 20px;
-        margin-right: 0.5rem;
-        margin-top: 0.25rem;
-    }
+.MapSection .checkicon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+}
 
-    .MapSection .strong {
-        font-weight: 800;
-        color: var(--color-text-heading);
-    }
+.MapSection .strong {
+    font-weight: 800;
+    color: var(--color-text-heading);
+}
 
 .MapSection .Center2 h2 {
     padding-top: 2rem;
 }
 
-    @media (min-width: 768px) { 
-        
-        .MapSection .image {
-            display: block;
-            
-        }
+.MapSection .container-socialmedias {
+    display: flex;
+    gap: 1rem;
+    padding-top: 3rem;
+    justify-self: center;
+}
 
-        .MapSection .Adresses {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .MapSection .Center1 h2 {
-            padding-top: 2rem;
-        }
+@media (min-width: 768px) {
+    .MapSection .Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
     }
 
-    @media (min-width: 1400px) { 
-        .MapSection .Container {
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            padding-inline: 2rem;
-        }
-
-        .MapSection .Adresses {
-            display: flex;
-            flex-direction: column;
-            grid-column: 2;
-            grid-row: 1 / span 4;
-            padding-top: 7rem;
-
-        }
-
-        .MapSection .image {
-            display: flex;
-            grid-column: 1;
-            grid-row: 1 /span 4;
-            
-        }
-    
+    .MapSection .image {
+        display: block;
     }
+
+    .MapSection .Adresses {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: 700px;
+    }
+
+    .MapSection .Center1 {
+        padding-top: 2rem;
+    }
+
+    .MapSection .container-socialmedias {
+        grid-column: span 2;
+        justify-content: center;
+        gap: 1rem;
+        padding-top: 1.5rem;
+    }
+}
+
+
+@media (min-width: 1400px) { 
+    .MapSection .Container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .MapSection .Adresses {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2;
+        grid-row: 1 / span 4;
+        padding-top: 7rem;
+    }
+
+    .MapSection .image {
+        display: flex;
+        grid-column: 1;
+        grid-row: 1 /span 4;
+        padding-top: 8rem;
+    }
+
+    .MapSection .container-socialmedias {
+        justify-content: left;
+        padding-left: 2.5rem;
+        padding-top: 2rem;
+    }
+}
