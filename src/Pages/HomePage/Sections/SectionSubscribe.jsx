@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useState, useContext } from 'react';
 import { MessageContext } from '../../../Contexts/MessageContext';
 import { useValidation } from '../../../Contexts/ValidationContext';
 import Button from '../../../Components/Button';
@@ -10,35 +10,32 @@ const SectionSubscribe = () => {
     const [formData, setFormData] = useState({ email: '' });
     const [errors, setErrors] = useState({ email: '' });
     const { message, messageType, showMessage, clearMessage } = useContext(MessageContext);
-    const { validationSwitch } = useValidation();
+    const { validateFormData, validationSwitch } = useValidation();
 
-    const validateForm = () => {
-        const emailError = validationSwitch('email', formData.email);
-        setErrors({ email: emailError });
-        return !emailError;
-    };
+    // Updates formData state and validates the email field in real-time
+    const handleChange = ({ target: { name, value } }) => {
+        clearMessage();
 
-    const handleChange = useCallback(({ target: { name, value } }) => {
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
         }));
 
-        const errorMessage = validationSwitch(name, value);
         setErrors((prevErrors) => ({
             ...prevErrors,
-            [name]: errorMessage,
+            [name]: validationSwitch(name, value),
         }));
-    }, [validationSwitch]);
+    };
 
+    // Validates the entire form and handles the form submission if valid
     const handleSubmit = async (event) => {
         event.preventDefault();
-        clearMessage();
-
-        if (!validateForm()) return;
-
-        const trimmedFormData = { email: formData.email.trim() };
-
+    
+        const newErrors = validateFormData(formData);
+        setErrors(newErrors);
+    
+        if (Object.values(newErrors).some((error) => error)) return;
+    
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
                 method: 'POST',
@@ -46,9 +43,9 @@ const SectionSubscribe = () => {
                     'Content-Type': 'application/json',
                     accept: '*/*',
                 },
-                body: JSON.stringify(trimmedFormData),
+                body: JSON.stringify(formData),
             });
-
+    
             if (res.ok) {
                 showMessage('success', 'You are now subscribed to our newsletter');
                 setFormData({ email: '' });
@@ -60,10 +57,11 @@ const SectionSubscribe = () => {
             showMessage('error', 'Something went wrong, please try again.');
         }
     };
-
-    const handleOkClick = useCallback(() => {
+    
+    // Clears any displayed message when the user clicks the OK button
+    const handleOkClick = () => {
         clearMessage();
-    }, [clearMessage]);
+    };
 
     return (
         <section id="section-subscribe">
@@ -88,21 +86,20 @@ const SectionSubscribe = () => {
                         </div>
                     ) : (
                         <form className="email" onSubmit={handleSubmit} noValidate>
-                                    <img className="input-icon" src={letterIcon} alt="letter icon" />
-                                    <input 
-                                        className="input" 
-                                        type="email" 
-                                        name="email" 
-                                        placeholder="Your email" 
-                                        required 
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                    />
-                                <Button type="submit">Subscribe</Button>
-                                {errors.email && <div className="error-message"><p className="error">{errors.email}</p></div>}
+                            <img className="input-icon" src={letterIcon} alt="letter icon" />
+                            <input 
+                                className="input" 
+                                type="email" 
+                                name="email" 
+                                placeholder="Your email" 
+                                required 
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                            <Button type="submit">Subscribe</Button>
+                            {errors.email && <div className="error-message"><p className="error">{errors.email}</p></div>}
                         </form>
                     )}
-                    
                 </div>
             </div>
         </section>
@@ -110,6 +107,8 @@ const SectionSubscribe = () => {
 };
 
 export default SectionSubscribe;
+
+
 
 
 

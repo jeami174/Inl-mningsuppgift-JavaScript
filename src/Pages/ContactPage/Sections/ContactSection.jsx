@@ -9,45 +9,30 @@ import AddIcon from '../../../Images/icons/add-group.svg';
 
 const Contact = () => {
     const { showMessage, clearMessage, message, messageType } = useContext(MessageContext);
-    const { validationSwitch } = useValidation();
-
+    const { validateFormData, validationSwitch } = useValidation();
     const [formData, setFormData] = useState({ fullName: '', email: '', specialist: '' });
     const [errors, setErrors] = useState({ fullName: '', email: '', specialist: '' });
 
-    const validateForm = () => {
-        const newErrors = {};
-        let isValid = true;
-
-        Object.keys(formData).forEach((fieldName) => {
-            const errorMessage = validationSwitch(fieldName, formData[fieldName].trim());
-            if (errorMessage) {
-                isValid = false;
-                newErrors[fieldName] = errorMessage;
-            }
-        });
-
-        setErrors(newErrors);
-        return isValid;
-    };
-
+    // Validates the entire form and handles the form submission if valid
     const handleSubmit = async (event) => {
         event.preventDefault();
         clearMessage();
     
-        if (!validateForm()) return;
-
-        const trimmedFormData = { ...formData, email: formData.email.trim() };
-
+        const newErrors = validateFormData(formData);
+        setErrors(newErrors);
+    
+        if (Object.values(newErrors).some((error) => error)) return;
+    
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'accept': '*/*'
+                    accept: '*/*'
                 },
-                body: JSON.stringify(trimmedFormData)
+                body: JSON.stringify(formData),
             });
-
+    
             if (res.ok) {
                 showMessage('success', 'We will get back to you as soon as we can');
                 setFormData({ fullName: '', email: '', specialist: '' });
@@ -60,14 +45,16 @@ const Contact = () => {
         }
     };
 
+    // Updates formData state and validates each field in real-time
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
-
+    
         const errorMessage = validationSwitch(name, value);
         setErrors((prevErrors) => ({ ...prevErrors, [name]: errorMessage }));
     };
 
+    // Uses InfoBoxRound to map out features
     const features = [
         {
             id: "info-1",
@@ -166,5 +153,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 
