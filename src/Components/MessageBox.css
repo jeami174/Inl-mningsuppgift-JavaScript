@@ -27,6 +27,7 @@
     border-radius: 4px;
     transition: background-color 0.3s;
     justify-self: center;
+    margin-top: 1rem;
 }
 
 .informationbox .btn-primary:hover {

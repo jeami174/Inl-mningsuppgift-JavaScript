@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { MessageContext } from '../../../Contexts/MessageContext.jsx';
+import { MessageContext, MESSAGE_TYPES } from '../../../Contexts/MessageContext.jsx';
 import { useValidation } from '../../../Contexts/ValidationContext';
 import Button from '../../../Components/Button';
 import './ContactSection.css';
@@ -34,14 +34,14 @@ const Contact = () => {
             });
     
             if (res.ok) {
-                showMessage('success', 'We will get back to you as soon as we can');
+                showMessage(MESSAGE_TYPES.SUCCESS, 'We will get back to you as soon as we can');
                 setFormData({ fullName: '', email: '', specialist: '' });
                 setErrors({});
             } else {
-                showMessage('error', 'Something went wrong, please try again.');
+                showMessage(MESSAGE_TYPES.ERROR, 'Something went wrong, please try again.');
             }
         } catch (error) {
-            showMessage('error', 'Something went wrong, please try again.');
+            showMessage(MESSAGE_TYPES.ERROR, 'Something went wrong, please try again.');
         }
     };
 
@@ -91,7 +91,7 @@ const Contact = () => {
                     </div>
                     {message ? (
                         <div className={`informationbox ${messageType}`}>
-                            <h3>{messageType === 'success' ? 'Thank you for your message.' : 'Something went wrong'}</h3>
+                            <h3>{messageType === MESSAGE_TYPES.SUCCESS ? 'Thank you for your message.' : 'Something went wrong'}</h3>
                             <p>{message}</p>
                             <button className="btn-primary" onClick={clearMessage}>OK</button>
                         </div>
@@ -153,6 +153,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 
 

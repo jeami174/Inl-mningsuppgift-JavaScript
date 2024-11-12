@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { MessageContext } from './MessageContext';
+import { MessageContext, MESSAGE_TYPES } from './MessageContext';
 import Button from './Button';
 import './MessageBox.css';
 
@@ -11,10 +11,7 @@ const MessageBox = () => {
     return (
         <div className={`informationbox ${messageType}`}>
             <p>{message}</p>
-            <Button 
-                className="btn-primary" 
-                onClick={clearMessage}
-            >
+            <Button className="btn-primary" onClick={clearMessage}>
                 Close
             </Button>
         </div>
@@ -22,3 +19,4 @@ const MessageBox = () => {
 };
 
 export default MessageBox;
+

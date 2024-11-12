@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { MessageContext } from '../../../Contexts/MessageContext';
+import { MessageContext, MESSAGE_TYPES } from '../../../Contexts/MessageContext';
 import { useValidation } from '../../../Contexts/ValidationContext';
 import Button from '../../../Components/Button';
 import notificationIcon from '../../../Images/notification-icon.svg';
@@ -47,14 +47,14 @@ const SectionSubscribe = () => {
             });
     
             if (res.ok) {
-                showMessage('success', 'You are now subscribed to our newsletter');
+                showMessage(MESSAGE_TYPES.SUCCESS, 'You are now subscribed to our newsletter');
                 setFormData({ email: '' });
                 setErrors({ email: '' });
             } else {
-                showMessage('error', 'Something went wrong, please try again.');
+                showMessage(MESSAGE_TYPES.ERROR, 'Something went wrong, please try again.');
             }
         } catch (error) {
-            showMessage('error', 'Something went wrong, please try again.');
+            showMessage(MESSAGE_TYPES.ERROR, 'Something went wrong, please try again.');
         }
     };
     
@@ -80,7 +80,7 @@ const SectionSubscribe = () => {
                     </div>
                     {message ? (
                         <div className={`informationbox ${messageType}`}>
-                            <h3>{messageType === 'success' ? 'Yay!' : 'Error'}</h3>
+                            <h3>{messageType === MESSAGE_TYPES.SUCCESS ? 'Yay!' : 'Error'}</h3>
                             <p>{message}</p>
                             <button className="btn-primary" onClick={handleOkClick}>OK</button>
                         </div>
@@ -107,6 +107,7 @@ const SectionSubscribe = () => {
 };
 
 export default SectionSubscribe;
+
 
 
 
