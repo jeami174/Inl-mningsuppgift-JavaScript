@@ -1,5 +1,5 @@
 #section-hero {
-    padding-top: 4rem;
+    padding-top: 1rem;
     background-color: var(--color-bg);
     background-image: linear-gradient(to top, rgba(99, 101, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
 }
@@ -39,7 +39,7 @@ max-width: 100%;
 #section-hero .content p {
     font-size: 18px;
     line-height: 28.8px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--color-text-body);
 }
 
@@ -52,7 +52,7 @@ max-width: 100%;
     justify-content: center;
     gap: 1rem;
     margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 #section-hero .phoneimages {
@@ -70,18 +70,24 @@ max-width: 100%;
 
     #section-hero .h1 h1 {
         font-size: 44px;
-        padding-bottom: 3rem;
-
+        margin-bottom: 0;
+        padding-bottom: 1.5rem;
+        margin-top: 0;
+        padding-top: 3rem;
     }
 
     #section-hero .content {
         grid-area: content;
         text-align: left;
+        padding-top: 7rem;
  
     }
 
     #section-hero .content .discover-more {
         justify-content: left;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
     }
 
     #section-hero .content p {
@@ -90,73 +96,74 @@ max-width: 100%;
     }
 
     #section-hero .phoneimages {
-        position: relative;
         grid-area: images;
         display: block;
-        width: 60%;
+        width: 100%;
         margin-left: auto;
+    }
+
+    #section-hero .content .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
     }
     
     #section-hero .phoneimages .img-back {
-        position: absolute;
         z-index: 998;
         bottom: 0;
-        right: 130px;
+        right: 0;
         max-width: 100%;
+        width: 100%;
+        height: 100%;
     }
     
-    #section-hero .phoneimages .img-front {
-        position: absolute;
-        z-index: 999;
-        bottom: 0;
-        max-width: 100%;
-    }
+
 
 }
 
 @media (min-width: 1400px) {
     #section-hero .container {
-        margin-top: 8rem;
+        margin-top: 12rem;
+        display: grid;
         grid-template-columns: 2fr 3fr;
         grid-template-areas:
             "h1 images"
             "content images";
     }
 
+    #section-hero .h1 {
+        grid-area: h1; 
+        align-self: end; 
+    }
+
     #section-hero .content {
+        grid-area: content;
         padding-top: 0;
     }
 
-    #section-hero .content .discover-more {
-        margin-top: 10rem;
+    #section-hero .content p {
+        margin-top: 0;
+        padding-top: 0;
     }
 
     #section-hero .h1 h1 {
         font-size: 56px;
         text-align: left;
-        padding-top: rem;
-        margin-bottom: 0;
+        padding-top: 0;
+        margin-bottom: 0rem;
     }
 
     #section-hero .phoneimages {
-        position: relative;
-        width: 50%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     #section-hero .phoneimages .img-back {
-        position: absolute;
         z-index: 998;
         width: 100%;
-
-        right: 230px;
-
-
-    }
-
-    #section-hero .phoneimages .img-front {
-        position: absolute;
-        z-index: 999;
-        width: 100%;
+        height: 100%;
+        right: 0px;
     }
 }
 

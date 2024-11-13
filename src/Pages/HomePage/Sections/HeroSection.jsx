@@ -6,7 +6,7 @@ import appStoreLight from '../../../Images/appstorelight.svg';
 import appStoreDark from '../../../Images/icons/Appstoredark.svg';
 import googlePlayLight from '../../../Images/googleplaylight.svg';
 import googlePlayDark from '../../../Images/icons/googledark.svg';
-import iPhoneBehind from '../../../Images/iPhonebehind-desktop.svg';
+import iPhoneBehind from '../../../Images/Group 5.svg';
 import groupImage from '../../../Images/Group (1).svg';
 
 const HeroSection = () => {
@@ -60,11 +60,6 @@ const HeroSection = () => {
                         className="img-back"
                         src={iPhoneBehind}
                         alt="A phone that shows how you can manage your money with a single click"
-                    />
-                    <img
-                        className="img-front"
-                        src={groupImage}
-                        alt="A phone that shows how you can manage your economy"
                     />
                 </div>
             </div>
