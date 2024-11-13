@@ -10,6 +10,8 @@ import facebook from '../../../Images/icons/bxl-facebook-square.svg';
 import twitter from '../../../Images/icons/bxl-twitter.svg';
 import instagram from '../../../Images/icons/bxl-instagram-alt.svg';
 import youtube from '../../../Images/icons/bxl-youtube.svg';
+import MapComponent from '../../../Components/Map';
+
 
 const MapSection = () => {
     const socialmedias = [
@@ -39,11 +41,7 @@ const MapSection = () => {
         <section aria-label="MapSection" className="MapSection">
             <div className='Container'>
                 <div className="image">
-                    <img
-                        className="map"
-                        src={map}
-                        alt="A map to our medical center"
-                    />
+                <MapComponent className="map" />
                 </div>
                 <div className="Adresses">
                     <div className="Center1">
