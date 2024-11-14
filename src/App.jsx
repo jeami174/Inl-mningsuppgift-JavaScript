@@ -6,12 +6,14 @@ import Header from "./Components/Header";
 import { MessageProvider } from "./Contexts/MessageContext";
 import Breadcrumb from "./Components/Breadcrumb";
 import { ValidationProvider } from "./Contexts/ValidationContext";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
     return (
         <ValidationProvider>
             <MessageProvider>
                 <BrowserRouter>
+                <ScrollToTop />
                     <>
                         <Header />
                         <Breadcrumb />

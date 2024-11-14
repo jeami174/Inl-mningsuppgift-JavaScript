@@ -7,7 +7,6 @@ import appStoreDark from '../../../Images/icons/Appstoredark.svg';
 import googlePlayLight from '../../../Images/googleplaylight.svg';
 import googlePlayDark from '../../../Images/icons/googledark.svg';
 import iPhoneBehind from '../../../Images/Group 5.svg';
-import groupImage from '../../../Images/Group (1).svg';
 
 const HeroSection = () => {
     const storeButtons = [

@@ -29,7 +29,15 @@ const SectionInfo = () => {
                             </li>
                         ))}
                     </ul>
-                    <Button aria-label="Learn more">
+                    <Button 
+                        aria-label="Learn more" 
+                        onClick={() => {
+                            const faqSection = document.getElementById('section-faq');
+                            if (faqSection) {
+                                faqSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
                         <span>Learn more</span>
                         <img src={arrowRightIcon} alt="Arrow right icon" className="arrowicon" />
                     </Button>
@@ -54,7 +62,15 @@ const SectionInfo = () => {
                             description="A elementum and imperdiet enim, pretium etiam facilisi aenean quam mauris."
                         />
                     </div>
-                    <Button aria-label="Learn more">
+                    <Button 
+                        aria-label="Learn more" 
+                        onClick={() => {
+                            const faqSection = document.getElementById('section-faq');
+                            if (faqSection) {
+                                faqSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
                         <span>Learn more</span>
                         <img src={arrowRightIcon} alt="Arrow right icon" className="arrowicon" />
                     </Button>

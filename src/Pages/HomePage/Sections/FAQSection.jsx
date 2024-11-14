@@ -6,6 +6,7 @@ import contactTextIcon from '../../../Images/icons/contactstext.svg';
 import arrowRightPurple from '../../../Images/icons/arrowrightpurple.svg';
 import arrowRightGreen from '../../../Images/icons/arrowrightgreen.svg';
 import './FAQSection.css';
+import { Link } from 'react-router-dom';
 
 const FAQSection = () => {
     const [faqs, setFaqs] = useState([]);
@@ -52,18 +53,20 @@ const FAQSection = () => {
                     <div className="phone">
                         <img src={contactPhoneIcon} alt="An icon of a phone" />
                         <p>Still have questions?</p>
-                        <button className="btn-contact-phone">
-                            <span>Contact us</span>
-                            <img src={arrowRightPurple} alt="Arrow right icon" className="arrowicon" />
-                        </button>
+                        <Link to="/contact" aria-label="Contact us">
+                            <button className="btn-contact-phone">
+                                <span>Contact us</span>
+                                <img src={arrowRightPurple} alt="Arrow right icon" className="arrowicon" />
+                            </button>
+                        </Link>
                     </div>
                     <div className="text">
                         <img src={contactTextIcon} alt="An icon of a text" />
                         <p>Don't like phone calls?</p>
-                        <button className="btn-contact-text">
+                        <Link to="/contact" className="btn-contact-text" aria-label="Contact us">
                             <span>Contact us</span>
                             <img src={arrowRightGreen} alt="Arrow right icon" className="arrowicon" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="btn-now">
