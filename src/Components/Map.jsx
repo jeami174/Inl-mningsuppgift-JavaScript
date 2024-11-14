@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-//"I used this guide https://developers.google.com/maps/documentation/javascript/add-google-map to implement the Google Maps JavaScript API in this component. 
-//I made some adjustments to keep it simple because it's not intended for production (like hardcoding the API key).
-//ChatGPT coached me throughout the process, but did not produce the code 
-//It could likely be refined, but it works :)”
+
+const libraries = ['marker'];
 
 const Map = () => {
   const mapRef = useRef(null);
@@ -18,7 +16,7 @@ const Map = () => {
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyDdEj2m4eacbkJNz2-fnacVXv-iGp55h7k",
-    libraries: ['marker']
+    libraries: libraries, // Använd `libraries`-konstanten
   });
 
   const handleMapLoad = async (map) => {
@@ -46,4 +44,5 @@ const Map = () => {
 };
 
 export default Map;
+
 
