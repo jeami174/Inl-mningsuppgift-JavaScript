@@ -78,6 +78,10 @@
     animation: openMenu 0.5s ease forwards;
 }
 
+.dark .navbar.show {
+    box-shadow: 0 5px 5px rgba(180, 183, 201, 0.2);
+}
+
 .navbar.hide {
     animation: closeMenu 0.5s ease forwards;
 }

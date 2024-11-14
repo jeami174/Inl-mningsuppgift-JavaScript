@@ -70,13 +70,13 @@ padding-bottom: 2rem;
 .ContactSection .form-group label {
     font-size: 1rem;
     font-weight: 600;
-    color: --(--color-text-body);
+    color: var(--color-text-heading);
 }
 
 .ContactSection .input {
     padding: 0.8rem;
     font-size: 1rem;
-    color: var(--color-gray-800);
+    color: var(--color-text-input);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     outline: none;
