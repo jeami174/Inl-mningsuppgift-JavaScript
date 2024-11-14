@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 //"I used this guide https://developers.google.com/maps/documentation/javascript/add-google-map to implement the Google Maps JavaScript API in this component. 
-//I made some adjustments to keep it simple and because it's not intended for production (like hardcoding the API key).
+//I made some adjustments to keep it simple because it's not intended for production (like hardcoding the API key).
 //ChatGPT coached me throughout the process, but did not produce the code 
 //It could likely be refined, but it works :)”
 

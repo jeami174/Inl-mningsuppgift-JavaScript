@@ -26,30 +26,42 @@ const Navbar = () => {
     const scrollToFeaturesSection = (event) => {
         event.preventDefault();
         if (location.pathname === '/') {
-            // If on the homepage, scroll directly to the AppFeaturesSection
             const featuresSection = document.getElementById('section-appfeatures');
             if (featuresSection) {
                 featuresSection.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // If on a different page, navigate to the homepage and then scroll to the AppFeaturesSection
             navigate('/', { state: { scrollToFeatures: true } });
         }
-        setIsMenuOpen(false); // Close the menu after the user has made a selection
+        setIsMenuOpen(false);
     };
 
-    // Function to change the navbar's background color depending on the current page
     useEffect(() => {
         if (location.pathname === '/') {
-            setBgColor('var(--color-bg)'); 
+            setBgColor('var(--color-bg)');
         } else if (location.pathname === '/Contact') {
-            setBgColor('var(--color-bg-gray)'); 
+            setBgColor('var(--color-bg-gray)');
         } else {
-            setBgColor('transparent'); 
+            setBgColor('transparent');
         }
 
         setIsMenuOpen(false); // Ensure the menu is closed when navigating between pages
     }, [location.pathname]);
+
+    // useEffect to close the menu on resize to desktop width (992px)
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 992) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <header style={{ backgroundColor: bgColor }}>
