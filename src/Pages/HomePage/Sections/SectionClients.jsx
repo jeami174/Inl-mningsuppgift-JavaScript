@@ -12,7 +12,7 @@ const SectionClients = () => {
             const data = await response.json();
             setTestimonials(data);
         } catch (error) {
-            console.error('Error fetching testimonials:', error); // Logs fetch errors to the console
+            console.error('Error fetching testimonials:', error);
         }
     };
 

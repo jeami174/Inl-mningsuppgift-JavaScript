@@ -2,7 +2,7 @@ import React from 'react';
 import closedIcon from '../Images/icons/iconclosed.svg';
 import darkClosedIcon from '../Images/icons/chevrondark.svg';
 import openIcon from '../Images/icons/ComponentOpen.svg';
-import './Accordion.css';
+import '../Styles/Accordion.css';
 
 const Accordion = ({ title, content, isOpen, onClick }) => {
     return (

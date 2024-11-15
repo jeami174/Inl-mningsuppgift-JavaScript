@@ -1,5 +1,5 @@
 import React from 'react';
-import './MobileButton.css';
+import '../Styles/MobileButton.css';
 import Hamburger from '../Images/Button - Toggle navigation.svg';
 
 const MobileButton = ({ onClick, isOpen, className = '' }) => {

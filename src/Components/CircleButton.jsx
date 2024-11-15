@@ -1,5 +1,5 @@
 import React from 'react';
-import './CircleButton.css';
+import '../Styles/CircleButton.css';
 
 const CircleButton = ({ onClick, className = '', children }) => {
     return (

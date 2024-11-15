@@ -1,5 +1,5 @@
 import React from 'react';
-import './InfoBox.css';
+import '../Styles/InfoBox.css';
 import arrowRightPurple from '../Images/icons/arrowrightpurple.svg';
 
 const InfoBox = ({ icon, title, description, showButton, buttonText }) => {

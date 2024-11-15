@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import homeIcon from '../Images/icons/bx-home-alt.svg';
-import './Breadcrumb.css';
+import '../Styles/Breadcrumb.css';
 
 const Breadcrumb = () => {
     const location = useLocation();

@@ -6,7 +6,7 @@ import Button from './Button';
 import Logotype from '../Images/logos/Logotype.svg';
 import Logotypedark from '../Images/logos/Logotypedark.svg';
 import UserIcon from '../Images/icons/User.svg';
-import './Navbar.css';
+import '../Styles/Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -15,6 +15,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+  
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -22,7 +23,9 @@ const Navbar = () => {
     const handleButtonClick = () => {
         navigate('/');
     };
-
+    
+    // Scrolls to the "Features" section on the homepage.
+    // If the user is not on the homepage, navigates there first.
     const scrollToFeaturesSection = (event) => {
         event.preventDefault();
         if (location.pathname === '/') {
@@ -36,6 +39,7 @@ const Navbar = () => {
         setIsMenuOpen(false);
     };
 
+     // Dynamically sets the navbar's background color based on the current route.
     useEffect(() => {
         if (location.pathname === '/') {
             setBgColor('var(--color-bg)');

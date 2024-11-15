@@ -1,5 +1,5 @@
 import React from 'react';
-import './InfoBoxRound.css';
+import '../Styles/InfoBoxRound.css';
 import arrowRightPurple from '../Images/icons/arrowrightpurple.svg';
 
 const InfoBoxRound = ({ icon, title, description, showButton, buttonText }) => {

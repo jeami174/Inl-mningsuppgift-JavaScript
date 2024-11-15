@@ -1,17 +1,14 @@
-// MapSection.js
 import React from 'react';
 import './MapSection.css';
 import placeIcon from '../../../Images/icons/bx-map.svg';
 import phoneIcon from '../../../Images/icons/bx-phone-call.svg';
 import clockIcon from '../../../Images/icons/bx-time-five.svg';
-import map from '../../../Images/map.svg';
 import Socialmedia from '../../../Components/Socialmedia';
 import facebook from '../../../Images/icons/bxl-facebook-square.svg';
 import twitter from '../../../Images/icons/bxl-twitter.svg';
 import instagram from '../../../Images/icons/bxl-instagram-alt.svg';
 import youtube from '../../../Images/icons/bxl-youtube.svg';
 import MapComponent from '../../../Components/Map';
-
 
 const MapSection = () => {
     const socialmedias = [

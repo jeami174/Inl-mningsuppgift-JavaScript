@@ -4,6 +4,7 @@ import starIcon from '../Images/icons/star.svg';
 import starBlankIcon from '../Images/icons/starblank.svg';
 
 const TestimonialCard = ({ author, jobRole, avatarUrl, comment, starRating }) => {
+    // Help function to render the star rating as icons   
     const renderStars = (rating) => {
         return (
             <div className="stars">

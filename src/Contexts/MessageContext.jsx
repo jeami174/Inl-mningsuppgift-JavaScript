@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import '../Components/MessageBox.css';
+import '../Styles/MessageBox.css';
 import '../Components/Button.jsx';
 
 export const MessageContext = createContext();
